@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6TcPklYr0rJwVEIxfiLSWSSZlIDEcha/JEOTXCF43Wr6MB0pQwxpA14d9uQP+8/asslBww64tIfV/3eHETvyTQ==",
+  "dgSpecHash": "v64ixTbY57+gdUK3s5MduzEtQdoCCzEdANpt0yfJko3nI4UbYPsLs6kpWg1SXztHAAJSVllemP28a0dZpRjfLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tymni\\source\\repos\\CouserPROJECT\\courseProject\\courseProject.csproj",
+  "projectFilePath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\courseProject\\courseProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tymni\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\tymni\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

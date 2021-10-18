@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "..\DAL\DAL.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "..\DTO\DTO.csproj", "{447ABFE0-5904-4CC2-85E9-5419B49560F3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "..\Domain\Domain.csproj", "{3666C45B-0F4C-4083-B2A7-D3A8789E8D4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands", "..\Commands\Commands.csproj", "{A08A9C74-E358-49EA-A80F-69FC37B2AC5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{447ABFE0-5904-4CC2-85E9-5419B49560F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{447ABFE0-5904-4CC2-85E9-5419B49560F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{447ABFE0-5904-4CC2-85E9-5419B49560F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3666C45B-0F4C-4083-B2A7-D3A8789E8D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3666C45B-0F4C-4083-B2A7-D3A8789E8D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3666C45B-0F4C-4083-B2A7-D3A8789E8D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3666C45B-0F4C-4083-B2A7-D3A8789E8D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A08A9C74-E358-49EA-A80F-69FC37B2AC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A08A9C74-E358-49EA-A80F-69FC37B2AC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A08A9C74-E358-49EA-A80F-69FC37B2AC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A08A9C74-E358-49EA-A80F-69FC37B2AC5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

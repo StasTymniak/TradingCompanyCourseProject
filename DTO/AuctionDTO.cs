@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Domain;
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DTO
 {
@@ -11,7 +8,7 @@ namespace DTO
     {
         [Key]
         public int AuctionId { get; set; }
-        public string AuctionName { get; set; } 
+        public string AuctionName { get; set; }
         public float StrtupPrice { get; set; }
         public float RedemptionPrice { get; set; }
         public bool isActive { get; set; }
@@ -19,6 +16,37 @@ namespace DTO
         public DateTime DeactivateTime { get; set; }
         public DateTime EndTime { get; set; }
         public int ProductId { get; set; }
-        public ProductDTO Product { get; set; }
+        public DateTime RowInsertTime { get; set; }
+        public DateTime RowUpdateTime { get; set; }
+        public Auction MappFromDTO() => new Auction
+        {
+            AuctionId = this.AuctionId,
+            AuctionName = this.AuctionName,
+            StrtupPrice = this.StrtupPrice,
+            RedemptionPrice = this.RedemptionPrice,
+            isActive = this.isActive,
+            ActivateTime = this.ActivateTime,
+            DeactivateTime = this.DeactivateTime,
+            EndTime = this.EndTime,
+            ProductId = this.ProductId,
+            RowInsertTime = this.RowInsertTime,
+            RowUpdateTime = this.RowUpdateTime
+        };
+        public AuctionDTO MappToDTO(Auction auction)
+        {
+            this.AuctionId = this.AuctionId;
+            this.AuctionName = auction.AuctionName;
+            this.StrtupPrice = auction.StrtupPrice;
+            this.RedemptionPrice = auction.RedemptionPrice;
+            this.isActive = auction.isActive;
+            this.ActivateTime = auction.ActivateTime;
+            this.DeactivateTime = auction.DeactivateTime;
+            this.EndTime = auction.EndTime;
+            this.ProductId = auction.ProductId;
+            this.RowInsertTime = auction.RowInsertTime;
+            this.RowUpdateTime = auction.RowUpdateTime;
+            return this;
+        }
+
     }
 }

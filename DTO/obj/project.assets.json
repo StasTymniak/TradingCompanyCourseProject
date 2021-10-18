@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\tymni\\.nuget\\packages\\": {},
@@ -15,11 +34,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tymni\\source\\repos\\CouserPROJECT\\DTO\\DTO.csproj",
+      "projectUniqueName": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj",
       "projectName": "DTO",
-      "projectPath": "C:\\Users\\tymni\\source\\repos\\CouserPROJECT\\DTO\\DTO.csproj",
+      "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj",
       "packagesPath": "C:\\Users\\tymni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tymni\\source\\repos\\CouserPROJECT\\DTO\\obj\\",
+      "outputPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -41,7 +60,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
