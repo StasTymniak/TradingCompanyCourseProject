@@ -20,12 +20,21 @@ namespace DTO
             RowUpdateTime = this.RowUpdateTime
         };
 
-        public ProductDTO MappToDTO(Product product)
+        public ProductDTO CreateMappToDTO(Product product)
         {
             this.ProductId = this.ProductId;
             this.ProductName = product.ProductName;
             this.CategoryId = product.CategoryId;
             this.RowInsertTime = product.RowInsertTime;
+            this.RowUpdateTime = this.RowUpdateTime;
+            return this;
+        }
+        public ProductDTO UpdateMappToDTO(Product product)
+        {
+            this.ProductId = this.ProductId;
+            this.ProductName = product.ProductName;
+            this.CategoryId = product.CategoryId;
+            this.RowInsertTime = this.RowInsertTime;
             this.RowUpdateTime = product.RowUpdateTime;
             return this;
         }

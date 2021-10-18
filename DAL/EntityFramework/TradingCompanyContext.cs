@@ -10,25 +10,23 @@ namespace DAL.EntityFramework
         public DbSet<ProductDTO> Products { get; set; }
         public DbSet<AuctionDTO> Auctions { get; set; }
         
-        public string connStr { get; set; }
+        private string _connStr { get; set; }
         public TradingCompanyContext(string conn)
         {
-            connStr = conn;
-            Database.EnsureCreated();
-            
+            _connStr = conn;
+            Database.EnsureCreated();  
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             try
             {
-                optionsBuilder.UseSqlServer(connStr);
+                optionsBuilder.UseSqlServer(_connStr);
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error: " + e.Message);
             }
-
         }
     }
 }

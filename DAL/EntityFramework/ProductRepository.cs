@@ -19,7 +19,7 @@ namespace DAL.EntityFramework
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 ProductDTO product = new ProductDTO();
-                db.Products.Add(product.MappToDTO(obj));
+                db.Products.Add(product.CreateMappToDTO(obj));
                 db.SaveChanges();
             }
             return obj;
@@ -64,7 +64,7 @@ namespace DAL.EntityFramework
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 ProductDTO product = db.Products.Where(x => x.ProductId == id).SingleOrDefault();
-                product.MappToDTO(tmp);
+                product.UpdateMappToDTO(tmp);
                 db.SaveChanges();
             }
         }

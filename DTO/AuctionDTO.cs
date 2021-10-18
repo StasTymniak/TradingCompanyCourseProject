@@ -32,7 +32,7 @@ namespace DTO
             RowInsertTime = this.RowInsertTime,
             RowUpdateTime = this.RowUpdateTime
         };
-        public AuctionDTO MappToDTO(Auction auction)
+        public AuctionDTO CreateMappToDTO(Auction auction)
         {
             this.AuctionId = this.AuctionId;
             this.AuctionName = auction.AuctionName;
@@ -44,6 +44,21 @@ namespace DTO
             this.EndTime = auction.EndTime;
             this.ProductId = auction.ProductId;
             this.RowInsertTime = auction.RowInsertTime;
+            this.RowUpdateTime = this.RowUpdateTime;
+            return this;
+        }
+        public AuctionDTO UpdateMappToDTO(Auction auction)
+        {
+            this.AuctionId = this.AuctionId;
+            this.AuctionName = auction.AuctionName;
+            this.StrtupPrice = auction.StrtupPrice;
+            this.RedemptionPrice = auction.RedemptionPrice;
+            this.isActive = auction.isActive;
+            this.ActivateTime = auction.ActivateTime;
+            this.DeactivateTime = auction.DeactivateTime;
+            this.EndTime = auction.EndTime;
+            this.ProductId = auction.ProductId;
+            this.RowInsertTime = this.RowInsertTime;
             this.RowUpdateTime = auction.RowUpdateTime;
             return this;
         }

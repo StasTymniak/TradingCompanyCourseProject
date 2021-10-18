@@ -19,7 +19,7 @@ namespace DAL.EntityFramework
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 AuctionDTO auction = new AuctionDTO();
-                db.Auctions.Add(auction.MappToDTO(obj));
+                db.Auctions.Add(auction.CreateMappToDTO(obj));
                 db.SaveChanges();
             }
             return obj;
@@ -64,7 +64,7 @@ namespace DAL.EntityFramework
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 AuctionDTO auction = db.Auctions.Where(x => x.AuctionId == id).SingleOrDefault();
-                auction.MappToDTO(tmp);
+                auction.UpdateMappToDTO(tmp);
                 db.SaveChanges();
             }
         }

@@ -8,9 +8,9 @@ namespace courseProject
     public static class Menu
     {
         static bool isTrue = true;
-        static private string connection = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
-        static AuctionCommands cmdAuction = new AuctionCommands(connection);
-        static ProductCommands cmdproduct = new ProductCommands(connection);
+        static private string _connection = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        static AuctionCommands cmdAuction = new AuctionCommands(_connection);
+        static ProductCommands cmdproduct = new ProductCommands(_connection);
         static void SwitchMenu()
         {
             Console.WriteLine(@"1)Auctions
