@@ -9,16 +9,20 @@ namespace DAL.EntityFramework
         public DbSet<CategoryDTO> Categories { get; set; }
         public DbSet<ProductDTO> Products { get; set; }
         public DbSet<AuctionDTO> Auctions { get; set; }
-        public TradingCompanyContext()
+        
+        public string connStr { get; set; }
+        public TradingCompanyContext(string conn)
         {
+            connStr = conn;
             Database.EnsureCreated();
+            
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             try
             {
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=tradingCompany;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(connStr);
             }
             catch (Exception e)
             {

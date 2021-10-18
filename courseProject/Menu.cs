@@ -1,14 +1,16 @@
 ﻿using Commands;
 using Domain;
 using System;
+using System.Configuration;
 
 namespace courseProject
 {
     public static class Menu
     {
         static bool isTrue = true;
-        static AuctionCommands cmdAuction = new AuctionCommands();
-        static ProductCommands cmdproduct = new ProductCommands();
+        static private string connection = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        static AuctionCommands cmdAuction = new AuctionCommands(connection);
+        static ProductCommands cmdproduct = new ProductCommands(connection);
         static void SwitchMenu()
         {
             Console.WriteLine(@"1)Auctions

@@ -8,19 +8,26 @@ namespace DAL.EntityFramework
 {
     public class ProductRepository : IRepository<Product>
     {
-        public void Create(Product obj)
+
+        public string conn;
+        public ProductRepository(string _conn)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            conn = _conn;
+        }
+        public Product Create(Product obj)
+        {
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 ProductDTO product = new ProductDTO();
                 db.Products.Add(product.MappToDTO(obj));
                 db.SaveChanges();
             }
+            return obj;
         }
 
         public void Delete(int id)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 var product = db.Products.Where(x => x.ProductId == id).SingleOrDefault();
                 if (product != null)
@@ -33,7 +40,7 @@ namespace DAL.EntityFramework
 
         public Product Get(int id)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 return db.Products.Find(id).MappFromDTO();
             }
@@ -41,7 +48,7 @@ namespace DAL.EntityFramework
 
         public List<Product> GetAll()
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 List<Product> auctions = new List<Product>();
                 foreach(ProductDTO item in db.Products.ToList())
@@ -54,7 +61,7 @@ namespace DAL.EntityFramework
 
         public void Update(int id, Product tmp)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 ProductDTO product = db.Products.Where(x => x.ProductId == id).SingleOrDefault();
                 product.MappToDTO(tmp);

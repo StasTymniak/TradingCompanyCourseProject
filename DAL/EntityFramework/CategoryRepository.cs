@@ -8,19 +8,26 @@ namespace DAL.EntityFramework
 {
     public class CategoryRepository : IRepository<Category>
     {
-        public void Create(Category obj)
+        public string conn;
+        public CategoryRepository(string _conn)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            conn = _conn;
+        }
+        public Category Create(Category obj)
+        {
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 CategoryDTO category = new CategoryDTO();
                 db.Categories.Add(category.MappToDTO(obj));
                 db.SaveChanges();
             }
+            return obj;
         }
+
 
         public void Delete(int id)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 var category = db.Categories.Where(x => x.CategoryId == id).SingleOrDefault();
                 if (category != null)
@@ -33,7 +40,7 @@ namespace DAL.EntityFramework
 
         public Category Get(int id)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 return db.Categories.Find(id).MappFromDTO();
             }
@@ -41,7 +48,7 @@ namespace DAL.EntityFramework
 
         public List<Category> GetAll()
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 List<Category> categories = new List<Category>();
                 foreach (CategoryDTO item in db.Categories.ToList())
@@ -54,7 +61,7 @@ namespace DAL.EntityFramework
 
         public void Update(int id, Category tmp)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 CategoryDTO category = db.Categories.Where(x => x.CategoryId == id).SingleOrDefault();
                 category.MappToDTO(tmp);

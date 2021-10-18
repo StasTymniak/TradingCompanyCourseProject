@@ -9,8 +9,14 @@ namespace Commands
 {
     public class ProductCommands
     {
-        IRepository<Product> product = new ProductRepository();
-        IRepository<Category> category = new CategoryRepository();
+        IRepository<Product> product;
+        IRepository<Category> category;
+
+        public ProductCommands(string conn)
+        {
+            product = new ProductRepository(conn);
+            category = new CategoryRepository(conn);
+        }
         public void PrintProduct(Product product)
         {
             Console.WriteLine($"ID--{product.ProductId}\nName--{product.ProductName}\nCategory--{category.Get(product.CategoryId).CategoryName}");

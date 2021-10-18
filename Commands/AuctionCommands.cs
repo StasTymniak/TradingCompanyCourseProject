@@ -9,8 +9,11 @@ namespace Commands
 {
     public class AuctionCommands
     {
-        IRepository<Domain.Auction> auction = new AuctionRepository();
-
+        IRepository<Auction> auction;
+        public AuctionCommands(string conn)
+        {
+            auction = new AuctionRepository(conn);
+        }
         public void ShowAllAuctions()
         {
             List<Domain.Auction> auctions = auction.GetAll();

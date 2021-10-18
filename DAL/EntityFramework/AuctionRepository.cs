@@ -8,32 +8,39 @@ namespace DAL.EntityFramework
 {
     public class AuctionRepository : IRepository<Auction>
     {
-        public void Create(Auction obj)
+        public string conn;
+        public AuctionRepository(string _conn)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            conn = _conn;
+        }
+        public Auction Create(Auction obj)
+        {
+
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 AuctionDTO auction = new AuctionDTO();
                 db.Auctions.Add(auction.MappToDTO(obj));
                 db.SaveChanges();
             }
+            return obj;
         }
 
         public void Delete(int id)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+        using (TradingCompanyContext db = new TradingCompanyContext(conn))
+        {
+            var auction = db.Auctions.Where(x => x.AuctionId == id).SingleOrDefault();
+            if (auction != null)
             {
-                var auction = db.Auctions.Where(x => x.AuctionId == id).SingleOrDefault();
-                if (auction != null)
-                {
-                    db.Auctions.Remove(auction);
-                    db.SaveChanges();
-                }
+                db.Auctions.Remove(auction);
+                db.SaveChanges();
             }
+        }
         }
 
         public Domain.Auction Get(int id)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 return db.Auctions.Find(id).MappFromDTO();
             }
@@ -41,7 +48,7 @@ namespace DAL.EntityFramework
 
         public List<Auction> GetAll()
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 List<Auction> auctions = new List<Auction>();
                 foreach (AuctionDTO item in db.Auctions.ToList())
@@ -54,7 +61,7 @@ namespace DAL.EntityFramework
 
         public void Update(int id, Auction tmp)
         {
-            using (TradingCompanyContext db = new TradingCompanyContext())
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 AuctionDTO auction = db.Auctions.Where(x => x.AuctionId == id).SingleOrDefault();
                 auction.MappToDTO(tmp);

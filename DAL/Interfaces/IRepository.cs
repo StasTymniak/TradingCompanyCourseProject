@@ -10,7 +10,7 @@ namespace DAL.Interfaces
     {
         List<T> GetAll();
         T Get(int id);
-        void Create(T obj);
+        T Create(T obj);
         void Update(int id, T obj);
         void Delete(int id);
     }
