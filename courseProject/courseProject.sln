@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "..\Domain\Domain.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands", "..\Commands\Commands.csproj", "{A08A9C74-E358-49EA-A80F-69FC37B2AC5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTests", "..\DALTests\DALTests.csproj", "{E1DDB1F2-4F03-4CAD-89D8-9D269586C7FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DALTests", "..\DALTests\DALTests.csproj", "{E1DDB1F2-4F03-4CAD-89D8-9D269586C7FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
