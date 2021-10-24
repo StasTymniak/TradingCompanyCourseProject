@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Commands\\Commands.csproj": {}
+    "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Commands\\Commands.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Commands\\Commands.csproj": {
+    "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Commands\\Commands.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Commands\\Commands.csproj",
+        "projectUniqueName": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Commands\\Commands.csproj",
         "projectName": "Commands",
-        "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Commands\\Commands.csproj",
-        "packagesPath": "C:\\Users\\tymni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Commands\\obj\\",
+        "projectPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Commands\\Commands.csproj",
+        "packagesPath": "C:\\Users\\tymniak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Commands\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\tymni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tymniak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -34,14 +32,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DAL\\DAL.csproj"
+              "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj"
+              "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj"
+              "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj"
               }
             }
           }
@@ -55,6 +53,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -70,28 +74,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DAL\\DAL.csproj": {
+    "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\tymni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\tymniak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\tymni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tymniak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -104,11 +106,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj"
+              "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj"
+              "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj"
               }
             }
           }
@@ -123,6 +125,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
@@ -157,28 +163,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj": {
+    "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\tymni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\tymniak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\tymni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tymniak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -202,6 +206,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -217,28 +227,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj": {
+    "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj",
+        "projectUniqueName": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\tymni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\DTO\\obj\\",
+        "projectPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\tymniak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\DTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\tymni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tymniak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -251,8 +259,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\tymni\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj"
+              "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj"
               }
             }
           }
@@ -266,6 +274,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -281,7 +295,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     }

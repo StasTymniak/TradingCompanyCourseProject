@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\courseProject"
+    "\\courseProject",
+    "\\DAL",
+    "\\DAL\\EntityFramework"
   ],
-  "SelectedNode": "\\courseProject\\Command.cs",
   "PreviewInSolutionExplorer": false
 }
