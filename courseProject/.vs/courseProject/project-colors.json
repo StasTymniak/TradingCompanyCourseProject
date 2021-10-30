@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "bd70cd18-4f0f-4751-8c08-75c45091468b": {
+      "ProjectGuid": "bd70cd18-4f0f-4751-8c08-75c45091468b",
+      "DisplayName": "courseProject",
+      "ColorIndex": 0
+    },
+    "447abfe0-5904-4cc2-85e9-5419b49560f3": {
+      "ProjectGuid": "447abfe0-5904-4cc2-85e9-5419b49560f3",
+      "DisplayName": "DTO",
+      "ColorIndex": 1
+    },
+    "3666c45b-0f4c-4083-b2a7-d3a8789e8d4b": {
+      "ProjectGuid": "3666c45b-0f4c-4083-b2a7-d3a8789e8d4b",
+      "DisplayName": "Domain",
+      "ColorIndex": 2
+    },
+    "a08a9c74-e358-49ea-a80f-69fc37b2ac5f": {
+      "ProjectGuid": "a08a9c74-e358-49ea-a80f-69fc37b2ac5f",
+      "DisplayName": "Commands",
+      "ColorIndex": 3
+    },
+    "3bda9474-65be-4355-86e0-cdbc84dd717f": {
+      "ProjectGuid": "3bda9474-65be-4355-86e0-cdbc84dd717f",
+      "DisplayName": "BLL",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

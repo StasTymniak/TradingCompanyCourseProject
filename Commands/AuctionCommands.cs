@@ -10,9 +10,9 @@ namespace Commands
     public class AuctionCommands
     {
         IRepository<Auction> auction;
-        public AuctionCommands(string conn)
+        public AuctionCommands()
         {
-            auction = new AuctionRepository(conn);
+            auction = new AuctionRepository();
         }
         public void ShowAllAuctions()
         {

@@ -12,10 +12,10 @@ namespace Commands
         IRepository<Product> product;
         IRepository<Category> category;
 
-        public ProductCommands(string conn)
+        public ProductCommands()
         {
-            product = new ProductRepository(conn);
-            category = new CategoryRepository(conn);
+            product = new ProductRepository();
+            category = new CategoryRepository();
         }
         public void PrintProduct(Product product)
         {

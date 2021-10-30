@@ -247,3 +247,8 @@ C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProject\obj\Debu
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProject\obj\Debug\net5.0\courseProject.csproj.CoreCompileInputs.cache
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProject\obj\Debug\net5.0\courseProject.csproj.CopyComplete
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProject\obj\Debug\net5.0\courseProject.genruntimeconfig.cache
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProject\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProject\bin\Debug\net5.0\Unity.Abstractions.dll
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProject\bin\Debug\net5.0\Unity.Container.dll
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProject\bin\Debug\net5.0\BLL.dll
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProject\bin\Debug\net5.0\BLL.pdb

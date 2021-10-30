@@ -72,6 +72,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.10, )"
+            },
+            "Unity": {
+              "target": "Package",
+              "version": "[5.11.10, )"
             }
           },
           "imports": [
@@ -136,6 +140,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "Unity": {
+              "target": "Package",
+              "version": "[5.11.10, )"
             }
           },
           "imports": [
@@ -204,6 +212,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "Unity": {
+              "target": "Package",
+              "version": "[5.11.10, )"
             }
           },
           "imports": [

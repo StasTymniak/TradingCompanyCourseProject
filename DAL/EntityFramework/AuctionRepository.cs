@@ -2,16 +2,16 @@
 using Domain;
 using DTO;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 
 namespace DAL.EntityFramework
 {
     public class AuctionRepository : IRepository<Auction>
     {
-        public string conn;
-        public AuctionRepository(string _conn)
+        public string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        public AuctionRepository()
         {
-            conn = _conn;
         }
         public Auction Create(Auction obj)
         {

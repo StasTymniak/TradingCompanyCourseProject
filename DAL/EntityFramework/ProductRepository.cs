@@ -2,6 +2,7 @@
 using Domain;
 using DTO;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 
 namespace DAL.EntityFramework
@@ -9,10 +10,9 @@ namespace DAL.EntityFramework
     public class ProductRepository : IRepository<Product>
     {
 
-        public string conn;
-        public ProductRepository(string _conn)
+        public string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        public ProductRepository()
         {
-            conn = _conn;
         }
         public Product Create(Product obj)
         {

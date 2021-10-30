@@ -1,4 +1,6 @@
 ﻿using Commands;
+using BLL.Interfaces;
+using BLL.Services;
 using Domain;
 using System;
 using System.Configuration;
@@ -8,9 +10,10 @@ namespace courseProject
     public static class Menu
     {
         static bool isTrue = true;
-        static private string _connection = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
-        static AuctionCommands cmdAuction = new AuctionCommands(_connection);
-        static ProductCommands cmdproduct = new ProductCommands(_connection);
+       
+        static AuctionCommands cmdAuction = new AuctionCommands();
+        static ProductCommands cmdproduct = new ProductCommands();
+        
         static void SwitchMenu()
         {
             Console.WriteLine(@"1)Auctions

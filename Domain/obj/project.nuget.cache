@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "7tydgUpP8eimT9rDnCZQhtynTqcomlCsgLkiLDtDYWeB+HoKBNo87ePAvqafdI1KUnsHCSEd3cnLtlAaI+vPeg==",
+  "dgSpecHash": "cwCpz91VO8lOtu+Lp8Z5cxVy+dtvronCmRaz5mAWa5DfjpoUlLLGkgXobSoLiBL3mYWKjuaKfRDJgzBcXXd9OQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tymniak\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\tymniak\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\tymniak\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+    "C:\\Users\\tymniak\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\tymniak\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\tymniak\\.nuget\\packages\\unity\\5.11.10\\unity.5.11.10.nupkg.sha512"
   ],
   "logs": []
 }

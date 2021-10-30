@@ -2,16 +2,16 @@
 using Domain;
 using DTO;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 
 namespace DAL.EntityFramework
 {
     public class CategoryRepository : IRepository<Category>
     {
-        public string conn;
-        public CategoryRepository(string _conn)
+        public string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        public CategoryRepository()
         {
-            conn = _conn;
         }
         public Category Create(Category obj)
         {

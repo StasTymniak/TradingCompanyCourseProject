@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "opmyKIhvPAWbwPkVONZkyTQ+RW7GKJfUv1U+4FEDMUPQM0dLvcnGy5INDplPBGSxTVGxwtsy3FawpLMe5qgYig==",
+  "dgSpecHash": "+vQ1Glk4s2B4seeCTl6emTqpBPf28XoklUJkLYqVXTEeKFD5e4x1RbB/AeKxKmS5qpg9MHrzhgH+zIoRZc4cFw==",
   "success": true,
   "projectFilePath": "C:\\Users\\tymniak\\source\\repos\\TradingCompanyCourseProject\\Commands\\Commands.csproj",
   "expectedPackageFiles": [
@@ -80,6 +80,7 @@
     "C:\\Users\\tymniak\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
     "C:\\Users\\tymniak\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\tymniak\\.nuget\\packages\\system.runtime.caching\\4.7.0\\system.runtime.caching.4.7.0.nupkg.sha512",
+    "C:\\Users\\tymniak\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Users\\tymniak\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\tymniak\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\tymniak\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",
@@ -105,7 +106,8 @@
     "C:\\Users\\tymniak\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\tymniak\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\tymniak\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\tymniak\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\tymniak\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\tymniak\\.nuget\\packages\\unity\\5.11.10\\unity.5.11.10.nupkg.sha512"
   ],
   "logs": []
 }
