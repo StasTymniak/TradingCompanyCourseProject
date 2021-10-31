@@ -23,5 +23,19 @@ namespace courseProjectWF
             List<Auction> auctions = _serviceAuction.GetAllAuctions();
         }
 
+        private void CreateDynamicLabelAndInput()
+        {
+            Label NameOfAuction = new Label();
+            this.Controls.Add(NameOfAuction);
+
+            NameOfAuction.Location = new Point(50, 50);
+            NameOfAuction.Size = new Size(100, 25);
+            NameOfAuction.Text = "Name Of Auction";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateDynamicLabelAndInput();
+        }
     }
 }

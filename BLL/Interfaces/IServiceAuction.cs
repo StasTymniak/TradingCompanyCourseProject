@@ -9,9 +9,9 @@ namespace BLL.Services
 {
     public interface IServiceAuction
     {
-        public List<Auction> GetAllAuctions();
-        public List<Auction> GetAllActiveAuctions();
-        public bool ActiveAuction(int id);
-        public bool DeactiveAuction(int id);
+        List<Auction> GetAllAuctions();
+        List<Auction> GetAllActiveAuctions();
+        bool ActiveAuction(int id);
+        bool DeactiveAuction(int id);
     }
 }

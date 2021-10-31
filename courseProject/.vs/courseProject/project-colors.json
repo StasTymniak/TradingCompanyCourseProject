@@ -25,7 +25,27 @@
       "ProjectGuid": "3bda9474-65be-4355-86e0-cdbc84dd717f",
       "DisplayName": "BLL",
       "ColorIndex": 4
+    },
+    "e1ddb1f2-4f03-4cad-89d8-9d269586c7fa": {
+      "ProjectGuid": "e1ddb1f2-4f03-4cad-89d8-9d269586c7fa",
+      "DisplayName": "DALTests",
+      "ColorIndex": 5
+    },
+    "523ecad4-c0ad-4574-ae02-0d3f6ce23318": {
+      "ProjectGuid": "523ecad4-c0ad-4574-ae02-0d3f6ce23318",
+      "DisplayName": "DAL",
+      "ColorIndex": 6
+    },
+    "3baa00b4-7365-43cd-be0b-7cac3ff166ea": {
+      "ProjectGuid": "3baa00b4-7365-43cd-be0b-7cac3ff166ea",
+      "DisplayName": "courseProjectWF",
+      "ColorIndex": 7
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 8
 }

@@ -46,7 +46,7 @@ namespace Commands
         {
             List<Product> products = product.GetAll();
             var productsSorted = from product in products
-                                 orderby product.CategoryId ascending
+                                 orderby product.CategoryId descending
                                  select product;
             foreach (Product product in productsSorted)
             {

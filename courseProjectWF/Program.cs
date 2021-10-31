@@ -1,5 +1,6 @@
 using BLL.Interfaces;
 using BLL.Services;
+using DAL.ADO.NET;
 using DAL.EntityFramework;
 using DAL.Interfaces;
 using Domain;
@@ -32,13 +33,14 @@ namespace courseProjectWF
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
         }
 
         static private void ConfigureUnity()
         {
             Container = new UnityContainer();
             Container.RegisterType<IServiceAuction, ServiceAuction>()
+                     .RegisterType<IServiceAuth, ServiceAuth>()
+                     .RegisterType<IUserRepository, UserRepository>()
                      .RegisterType<IRepository<Auction>, AuctionRepository>()
                      .RegisterType<IRepository<Product>, ProductRepository>()
                      .RegisterType<IRepository<Category>, CategoryRepository>();

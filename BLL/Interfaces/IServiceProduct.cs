@@ -9,9 +9,9 @@ namespace BLL.Services
 {
     public interface IServiceProduct
     {
-        public List<Product> GetAllProducts();
-        public Product GetProduct(int id);
-        public List<Product> SortProducts(string category);
-        public List<Product> GetProductsByCategory(string category);
+        List<Product> GetAllProducts();
+        Product GetProduct(int id);
+        List<Product> SortProducts(string category);
+        List<Product> GetProductsByCategory(string category);
     }
 }

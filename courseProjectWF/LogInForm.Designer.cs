@@ -44,7 +44,7 @@
             this.bthLogIn.Text = "Log in";
             this.bthLogIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bthLogIn.UseVisualStyleBackColor = true;
-            this.bthLogIn.Click += new System.EventHandler(this.button1_Click);
+            this.bthLogIn.Click += new System.EventHandler(this.bthLogIn_Click);
             // 
             // lblEmail
             // 
