@@ -1,4 +1,4 @@
-﻿using DAL.Interfaces;
+﻿using Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace BLL.Interfaces
 {
-    public interface IServiceAuth
+    public  interface IServiceCategory
     {
-        void RegUser();
-        List<int> LogIn(string enteredEmail, string enteredPass);
+        List<Category> GetAllCategory();
+        Category GetCategory(int id);
+
     }
 }

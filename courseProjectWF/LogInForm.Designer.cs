@@ -91,6 +91,7 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.bthLogIn);
             this.Name = "LogInForm";
+            this.Text = "Log In";
             this.ResumeLayout(false);
             this.PerformLayout();
 

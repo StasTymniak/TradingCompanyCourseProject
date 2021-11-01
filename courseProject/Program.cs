@@ -14,19 +14,15 @@ namespace courseProject
             /*Menu.ShowMenu();*/
             IUserRepository userRepository = new UserRepository();
             IServiceAuth serviceAuth = new ServiceAuth(userRepository);
-            UserDTO userLogIn = new UserDTO();
+            /*UserDTO userLogIn = new UserDTO();
             Console.Write("Login: ");
             string enteredEmail = Console.ReadLine();
             Console.Write("Password: ");
             string enteredPass = Console.ReadLine();
             userLogIn = userRepository.LoginData(enteredEmail);
-            string userpassDB = userRepository.Get(userLogIn.Id).Password;
-            if (serviceAuth.ConfirmPass(enteredPass, userpassDB))
-            {
-                Console.WriteLine("True");
-            }
-            else
-                Console.WriteLine("Wrong Pass");
+            string userpassDB = userRepository.Get(userLogIn.Id).Password;*/
+            serviceAuth.RegUser();
+
         }
     }
 }

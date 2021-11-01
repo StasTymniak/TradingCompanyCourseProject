@@ -68,5 +68,17 @@ namespace BLL.Interfaces
             List<Auction> auctions = _auctionRepository.GetAll();
             return auctions;
         }
+        public void AddAuction(int productId, string auctionName, float startupPrice, float redemptionPrice, DateTime endtime)
+        {
+            Auction auction = new Auction();
+            auction.AuctionName = auctionName;
+            auction.StrtupPrice = startupPrice;
+            auction.RedemptionPrice = redemptionPrice;
+            auction.EndTime = endtime;
+            auction.isActive = false;
+            auction.ProductId = productId;
+            auction.RowInsertTime = DateTime.Now;
+            this._auctionRepository.Create(auction);
+        }
     }
 }

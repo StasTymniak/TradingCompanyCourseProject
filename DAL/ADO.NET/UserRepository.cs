@@ -65,7 +65,7 @@ VALUES (@login,@pass,@roleid)";
                     UserDTO user = new UserDTO();
                     while (reader.Read())
                     {
-                        user.Id = (int)reader["ID"];
+                        user.Id = (int)reader["Id"];
                         user.Login = reader["Login"].ToString();
                         user.Password = reader["Password"].ToString();
                         user.RoleId = (int)reader["RoleId"];
@@ -116,6 +116,7 @@ VALUES (@login,@pass,@roleid)";
                         user.Id = (int)reader["Id"];
                         user.Login = reader["Login"].ToString();
                         user.Password = reader["Password"].ToString();
+                        user.RoleId = (int)reader["RoleId"];
                     }
                     return user;
                 }

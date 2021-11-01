@@ -13,5 +13,7 @@ namespace BLL.Services
         List<Auction> GetAllActiveAuctions();
         bool ActiveAuction(int id);
         bool DeactiveAuction(int id);
+        void AddAuction(int productId, string auctionName, float startupPrice, float redemptionPrice, DateTime endtime);
+
     }
 }

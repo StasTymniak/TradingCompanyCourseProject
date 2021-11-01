@@ -32,18 +32,21 @@ namespace courseProjectWF
             }
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.SetCompatibleTextRenderingDefault(false);
         }
 
         static private void ConfigureUnity()
         {
             Container = new UnityContainer();
             Container.RegisterType<IServiceAuction, ServiceAuction>()
+                     .RegisterType<IServiceCategory, ServiceCategory>()
                      .RegisterType<IServiceAuth, ServiceAuth>()
+                     .RegisterType<IServiceProduct, ServiceProduct>()
                      .RegisterType<IUserRepository, UserRepository>()
                      .RegisterType<IRepository<Auction>, AuctionRepository>()
                      .RegisterType<IRepository<Product>, ProductRepository>()
                      .RegisterType<IRepository<Category>, CategoryRepository>();
+            
         }
     }
 }

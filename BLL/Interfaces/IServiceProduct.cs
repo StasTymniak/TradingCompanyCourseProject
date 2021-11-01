@@ -11,7 +11,7 @@ namespace BLL.Services
     {
         List<Product> GetAllProducts();
         Product GetProduct(int id);
-        List<Product> SortProducts(string category);
+        List<Product> SortProducts();
         List<Product> GetProductsByCategory(string category);
     }
 }

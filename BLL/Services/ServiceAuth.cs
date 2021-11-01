@@ -12,12 +12,13 @@ namespace BLL.Services
 {
     public class ServiceAuth : IServiceAuth
     {
+        List<int> logInData = new List<int>();
         private readonly IUserRepository _userRepository;
         public ServiceAuth(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
-        public bool ConfirmPass(string enteredPass, string dbString)
+        private bool ConfirmPass(string enteredPass, string dbString)
         {
             string[] objects = dbString.Split('.');
             int iteration = Convert.ToInt32(objects[0]);
@@ -29,14 +30,14 @@ namespace BLL.Services
             else
                 return false;
         }
-        public string GenerateSalt()
+        private string GenerateSalt()
         {
             RNGCryptoServiceProvider rncCsp = new RNGCryptoServiceProvider();
             byte[] salt = new byte[16];
             rncCsp.GetBytes(salt);
             return Convert.ToBase64String(salt);
         }
-        public string HashPass(string pass, int iteration)
+        private string HashPass(string pass, int iteration)
         {
             string salt = GenerateSalt();
             pass = salt + pass;
@@ -53,7 +54,7 @@ namespace BLL.Services
                 return iteration.ToString() + "." + salt + "." + Convert.ToBase64String(hashed);
             }
         }
-        public byte[] Hash(string pass, int iteration)
+        private byte[] Hash(string pass, int iteration)
         {
             byte[] hashed;
             using (var sha = SHA256.Create())
@@ -83,11 +84,14 @@ namespace BLL.Services
             user.RoleId = Convert.ToInt32(Console.ReadLine());
             _userRepository.Create(user);
         }
-        public bool LogIn(string enteredEmail,string enteredPass)
+        public List<int> LogIn(string enteredLogin,string enteredPass)
         {
-            var user = _userRepository.LoginData(enteredEmail);
-            string userpassDB = _userRepository.Get(user.Id).Password;
-            return ConfirmPass(enteredPass, userpassDB);
+
+            var user = _userRepository.LoginData(enteredLogin);
+            string userpassDB = user.Password;
+            logInData.Add(Convert.ToInt32(ConfirmPass(enteredPass, userpassDB)));
+            logInData.Add(user.RoleId);
+            return logInData;
         }
     }
 }
