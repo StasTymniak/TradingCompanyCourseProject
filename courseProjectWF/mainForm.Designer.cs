@@ -415,7 +415,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(1064, 34);
+            this.btnLogOut.Location = new System.Drawing.Point(1056, 462);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(76, 39);
             this.btnLogOut.TabIndex = 1;
@@ -425,7 +425,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1109, 511);
+            this.btnExit.Location = new System.Drawing.Point(1056, 507);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(76, 39);
             this.btnExit.TabIndex = 2;
@@ -437,7 +437,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 562);
+            this.ClientSize = new System.Drawing.Size(1141, 560);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.roleControl);

@@ -26,5 +26,10 @@ namespace BLL.Services
             return _categoryRepository.Get(id);
         }
 
+        public Category GetCategory(string name)
+        {           
+            return _categoryRepository.GetAll().FirstOrDefault(x => x.CategoryName == name);
+        }
+
     }
 }
