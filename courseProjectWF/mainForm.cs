@@ -17,7 +17,7 @@ namespace courseProjectWF
         private readonly IServiceAuction _serviceAuction;
         private readonly IServiceProduct _serviceProduct;
         private readonly IServiceCategory _serviceCategory;
-        public mainForm(IServiceAuction serviceAuction, IServiceProduct serviceProduct, IServiceCategory serviceCategory,int roleID)
+        public mainForm(IServiceAuction serviceAuction, IServiceProduct serviceProduct, IServiceCategory serviceCategory, int roleID)
         {
             _roleID = roleID;
             _serviceAuction = serviceAuction;
@@ -26,19 +26,19 @@ namespace courseProjectWF
             InitializeComponent();
             RoleCheak();
             LoadProducts();
-            LoadAuctions();         
-            FillcategoryBox();  
+            LoadAuctions();
+            FillcategoryBox();
         }
         private void RoleCheak()
         {
-            if(_roleID == 2)
+            if (_roleID == 2)
             {
                 roleControl.TabPages.Remove(adminPage);
             }
         }
         private void FillcategoryBox()
         {
-            foreach(Category category in _serviceCategory.GetAllCategory())
+            foreach (Category category in _serviceCategory.GetAllCategory())
             {
                 categoryBox.Items.Add(category.CategoryName);
                 userCategoryBox.Items.Add(category.CategoryName);
@@ -68,11 +68,18 @@ namespace courseProjectWF
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = adminProductDataGrid.Rows[indexRowD];
-                ChoosenProductId.Text = $"Product ID {row.Cells[0].Value}";
-                productId = Convert.ToInt32(row.Cells[0].Value);
-                ChosenProductName.Text = $"Product name {row.Cells[1].Value}";
-                auctionName = Convert.ToString(row.Cells[1].Value) + " Auction";
-                            
+                try
+                {
+                    ChoosenProductId.Text = $"Product ID {row.Cells[0].Value}";
+                    productId = Convert.ToInt32(row.Cells[0].Value);
+                    ChosenProductName.Text = $"Product name {row.Cells[1].Value}";
+                    auctionName = Convert.ToString(row.Cells[1].Value) + " Auction";
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Wrong row");
+                }
             }
         }
         private void adminAuctionDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -83,7 +90,16 @@ namespace courseProjectWF
             {
                 DataGridViewRow row = adminAuctionDataGrid.Rows[indexRowD];
                 lblChoosenId.Text = $"Chosen ID {row.Cells[0].Value}";
-                auctionChosenId = Convert.ToInt32(row.Cells[0].Value);
+                try
+                {
+                    auctionChosenId = Convert.ToInt32(row.Cells[0].Value);
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Wrong row");
+                }
+
             }
         }
         private void bthSort_Click(object sender, EventArgs e)
@@ -105,33 +121,44 @@ namespace courseProjectWF
         }
         private void findByCategory_Click(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
-            table.Columns.Add("Id", typeof(int));
-            table.Columns.Add("Name", typeof(string));
-            table.Columns.Add("Category", typeof(string));
-            table.Columns.Add("RowInsertTime", typeof(DateTime));
-            table.Columns.Add("RowUpdateTime", typeof(DateTime));
+            DataTable table1 = new DataTable();
+            table1.Columns.Add("Id", typeof(int));
+            table1.Columns.Add("Name", typeof(string));
+            table1.Columns.Add("Category", typeof(string));
+            table1.Columns.Add("RowInsertTime", typeof(DateTime));
+            table1.Columns.Add("RowUpdateTime", typeof(DateTime));
 
             if (_roleID == 1)
             {
-                foreach (Product product in _serviceProduct.GetProductsByCategory(categoryBox.SelectedItem.ToString()))
+                if (roleControl.SelectedTab == roleControl.TabPages["userPage"])
                 {
-                    table.Rows.Add(product.ProductId, product.ProductName, _serviceCategory.GetCategory(product.CategoryId).CategoryName, product.RowInsertTime, product.RowUpdateTime);
+                    foreach (Product product in _serviceProduct.GetProductsByCategory(userCategoryBox.SelectedItem.ToString()))
+                    {
+                        table1.Rows.Add(product.ProductId, product.ProductName, _serviceCategory.GetCategory(product.CategoryId).CategoryName, product.RowInsertTime, product.RowUpdateTime);
+                    }
+                    adminProductDataGrid.DataSource = table1;
+                    userProductdataGrid.DataSource = table1;
                 }
-                foreach (Product product in _serviceProduct.GetProductsByCategory(userCategoryBox.SelectedItem.ToString()))
+                if (roleControl.SelectedTab == roleControl.TabPages["adminPage"])
                 {
-                    table.Rows.Add(product.ProductId, product.ProductName, _serviceCategory.GetCategory(product.CategoryId).CategoryName, product.RowInsertTime, product.RowUpdateTime);
+                    foreach (Product product in _serviceProduct.GetProductsByCategory(categoryBox.SelectedItem.ToString()))
+                    {
+                        table1.Rows.Add(product.ProductId, product.ProductName, _serviceCategory.GetCategory(product.CategoryId).CategoryName, product.RowInsertTime, product.RowUpdateTime);
+                    }
+                    adminProductDataGrid.DataSource = table1;
+                    userProductdataGrid.DataSource = table1;
                 }
             }
             else
             {
                 foreach (Product product in _serviceProduct.GetProductsByCategory(userCategoryBox.SelectedItem.ToString()))
                 {
-                    table.Rows.Add(product.ProductId, product.ProductName, _serviceCategory.GetCategory(product.CategoryId).CategoryName, product.RowInsertTime, product.RowUpdateTime);
+                    table1.Rows.Add(product.ProductId, product.ProductName, _serviceCategory.GetCategory(product.CategoryId).CategoryName, product.RowInsertTime, product.RowUpdateTime);
                 }
+                adminProductDataGrid.DataSource = table1;
+                userProductdataGrid.DataSource = table1;
             }
-            adminProductDataGrid.DataSource = table;
-            userProductdataGrid.DataSource = table;
+
         }
         private void btnGoToAuctions_Click(object sender, EventArgs e)
         {
@@ -139,10 +166,11 @@ namespace courseProjectWF
             float redempitonPrice = float.Parse(redemptionPriceBox.Text);
             DateTime endTime = Convert.ToDateTime(endTimeBox.Text);
 
-            _serviceAuction.AddAuction(productId,auctionName,startUpPrice,redempitonPrice,endTime);
+            _serviceAuction.AddAuction(productId, auctionName, startUpPrice, redempitonPrice, endTime);
             startUpPriceBox.Text = "";
             redemptionPriceBox.Text = "";
             endTimeBox.Text = "";
+            LoadAuctions();
         }
         private void LoadAuctions()
         {
@@ -160,7 +188,7 @@ namespace courseProjectWF
 
             foreach (Auction auction in _serviceAuction.GetAllAuctions())
             {
-                table.Rows.Add(auction.AuctionId, auction.AuctionName, auction.StrtupPrice, auction.RedemptionPrice, auction.isActive,_serviceProduct.GetProduct(auction.ProductId).ProductName,auction.ActivateTime, auction.DeactivateTime, auction.RowInsertTime,auction.RowUpdateTime);
+                table.Rows.Add(auction.AuctionId, auction.AuctionName, auction.StrtupPrice, auction.RedemptionPrice, auction.isActive, _serviceProduct.GetProduct(auction.ProductId).ProductName, auction.ActivateTime, auction.DeactivateTime, auction.RowInsertTime, auction.RowUpdateTime);
             }
 
             adminAuctionDataGrid.DataSource = table;

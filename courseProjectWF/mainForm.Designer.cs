@@ -196,10 +196,10 @@
             // 
             this.ProductAuctionControl.Controls.Add(this.ProductPage);
             this.ProductAuctionControl.Controls.Add(this.AuctionPage);
-            this.ProductAuctionControl.Location = new System.Drawing.Point(0, 0);
+            this.ProductAuctionControl.Location = new System.Drawing.Point(0, 6);
             this.ProductAuctionControl.Name = "ProductAuctionControl";
             this.ProductAuctionControl.SelectedIndex = 0;
-            this.ProductAuctionControl.Size = new System.Drawing.Size(1043, 506);
+            this.ProductAuctionControl.Size = new System.Drawing.Size(1043, 500);
             this.ProductAuctionControl.TabIndex = 0;
             // 
             // ProductPage
@@ -221,7 +221,7 @@
             this.ProductPage.Location = new System.Drawing.Point(4, 29);
             this.ProductPage.Name = "ProductPage";
             this.ProductPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ProductPage.Size = new System.Drawing.Size(1035, 473);
+            this.ProductPage.Size = new System.Drawing.Size(1035, 467);
             this.ProductPage.TabIndex = 0;
             this.ProductPage.Text = "Products";
             this.ProductPage.UseVisualStyleBackColor = true;
@@ -415,7 +415,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(1056, 462);
+            this.btnLogOut.Location = new System.Drawing.Point(1064, 34);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(76, 39);
             this.btnLogOut.TabIndex = 1;
@@ -425,7 +425,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1056, 507);
+            this.btnExit.Location = new System.Drawing.Point(1109, 511);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(76, 39);
             this.btnExit.TabIndex = 2;
@@ -437,7 +437,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1141, 560);
+            this.ClientSize = new System.Drawing.Size(1197, 562);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.roleControl);

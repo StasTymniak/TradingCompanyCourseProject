@@ -11,6 +11,6 @@ namespace BLL.Interfaces
     {
         List<Category> GetAllCategory();
         Category GetCategory(int id);
-        Category GetCategory(string name);
+
     }
 }

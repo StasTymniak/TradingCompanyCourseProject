@@ -28,11 +28,11 @@ namespace BLL.Services
             return _productRepository.Get(id);
         }
 
-        public List<Product> GetProductsByCategory(string category)
+        public List<Product> GetProductsByCategory(string requestedCategory)
         {
             List<Product> products = _productRepository.GetAll();
             var selectedproducts = from product in products
-                                   where _categoryRepository.Get(product.CategoryId).CategoryName == category
+                                   where _categoryRepository.Get(product.CategoryId).CategoryName == requestedCategory
                                    select product;
             List<Product> findedproducts = new List<Product>();
             foreach (Product item in selectedproducts)
@@ -40,15 +40,6 @@ namespace BLL.Services
                 findedproducts.Add(item);
             }
             return findedproducts;
-            /*List<Product> products = _productRepository.GetAll();
-            var query = products.Where(x => x.CategoryId == category.CategoryId);
-            return query.Select(p => new Product
-            {
-                ProductId = p.ProductId,
-                CategoryId = p.CategoryId,
-                RowInsertTime = p.RowInsertTime,
-                RowUpdateTime = p.RowUpdateTime
-            }).ToList();*/
         }
 
         public List<Product> SortProducts()
@@ -64,6 +55,8 @@ namespace BLL.Services
             }
             return sortedproducts;
         }
+
+
 
     }
 }
