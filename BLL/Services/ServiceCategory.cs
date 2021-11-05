@@ -17,14 +17,16 @@ namespace BLL.Services
             _categoryRepository = categoryRepository;
         }
         public List<Category> GetAllCategory()
-        {
-            return _categoryRepository.GetAll();
-        }
+            => _categoryRepository.GetAll();
+
 
         public Category GetCategory(int id)
-        {
-            return _categoryRepository.Get(id);
-        }
+            =>_categoryRepository.Get(id);
+        
+
+        public Category GetCategory(string name)
+            => _categoryRepository.Get(name);
+
 
     }
 }

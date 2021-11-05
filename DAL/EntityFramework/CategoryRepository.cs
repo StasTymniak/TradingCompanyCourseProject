@@ -46,6 +46,14 @@ namespace DAL.EntityFramework
             }
         }
 
+        public Category Get(string name)
+        {
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
+            {
+                return db.Categories.Where(c => c.CategoryName == name).FirstOrDefault().MappFromDTO();
+            }
+        }
+
         public List<Category> GetAll()
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
@@ -59,13 +67,14 @@ namespace DAL.EntityFramework
             }
         }
 
-        public void Update(int id, Category tmp)
+        public Category Update(int id, Category tmp)
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 CategoryDTO category = db.Categories.Where(x => x.CategoryId == id).SingleOrDefault();
                 category.UpdateMappToDTO(tmp);
                 db.SaveChanges();
+                return tmp;
             }
         }
     }

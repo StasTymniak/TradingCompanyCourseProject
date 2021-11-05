@@ -12,11 +12,10 @@ namespace BLL.Services
     public class ServiceProduct : IServiceProduct
     {
         private readonly IRepository<Product> _productRepository;
-        private readonly IRepository<Category> _categoryRepository;
-        public ServiceProduct(IRepository<Product> productRepository, IRepository<Category> categoryRepository)
+        
+        public ServiceProduct(IRepository<Product> productRepository)
         {
             _productRepository = productRepository;
-            _categoryRepository = categoryRepository;  
         }
         public List<Product> GetAllProducts()
         {
@@ -28,18 +27,35 @@ namespace BLL.Services
             return _productRepository.Get(id);
         }
 
-        public List<Product> GetProductsByCategory(string requestedCategory)
+        /*public List<Product> GetProductsByCategory(string requestedCategory)
         {
             List<Product> products = _productRepository.GetAll();
             var selectedproducts = from product in products
                                    where _categoryRepository.Get(product.CategoryId).CategoryName == requestedCategory
                                    select product;
+
             List<Product> findedproducts = new List<Product>();
             foreach (Product item in selectedproducts)
             {
                 findedproducts.Add(item);
             }
             return findedproducts;
+        }*/
+        public List<Product> GetProductsByCategory(Category requestedCategory)
+        {
+            List<Product> products = _productRepository.GetAll();
+            var query = products
+                .Where(p => p.CategoryId == requestedCategory.CategoryId)
+                .Select(p => new Product
+                {
+                    ProductId = p.ProductId,
+                    ProductName = p.ProductName,
+                    CategoryId = p.CategoryId,
+                    RowInsertTime = p.RowInsertTime,
+                    RowUpdateTime = p.RowUpdateTime
+                });
+                return query.ToList();
+            
         }
 
         public List<Product> SortProducts()

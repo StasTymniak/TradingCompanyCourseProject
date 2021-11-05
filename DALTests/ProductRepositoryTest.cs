@@ -19,7 +19,7 @@ namespace DALTests
         [OneTimeSetUp]
         public void InitialSetupTest()
         {
-            productRep = new ProductRepository(_connection);
+            productRep = new ProductRepository();
         }
 
         [Test]

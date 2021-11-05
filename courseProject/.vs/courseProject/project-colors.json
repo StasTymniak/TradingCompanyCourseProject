@@ -50,7 +50,12 @@
       "ProjectGuid": "0e14a2db-db61-45cd-b769-aa22b4799e4e",
       "DisplayName": "BLLTests",
       "ColorIndex": 8
+    },
+    "f1d39dd3-70f1-4a6b-9d2e-8add159549ee": {
+      "ProjectGuid": "f1d39dd3-70f1-4a6b-9d2e-8add159549ee",
+      "DisplayName": "BLLTests",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 10
 }

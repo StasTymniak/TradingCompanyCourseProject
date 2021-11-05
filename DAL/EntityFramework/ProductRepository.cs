@@ -37,7 +37,10 @@ namespace DAL.EntityFramework
                 }
             }
         }
-
+        public Product Get(string id)
+        {
+            throw new System.NotImplementedException();
+        }
         public Product Get(int id)
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
@@ -59,13 +62,14 @@ namespace DAL.EntityFramework
             }
         }
 
-        public void Update(int id, Product tmp)
+        public Product Update(int id, Product tmp)
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 ProductDTO product = db.Products.Where(x => x.ProductId == id).SingleOrDefault();
                 product.UpdateMappToDTO(tmp);
                 db.SaveChanges();
+                return tmp;
             }
         }
     }

@@ -132,7 +132,7 @@ namespace courseProjectWF
             {
                 if (roleControl.SelectedTab == roleControl.TabPages["userPage"])
                 {
-                    foreach (Product product in _serviceProduct.GetProductsByCategory(userCategoryBox.SelectedItem.ToString()))
+                    foreach (Product product in _serviceProduct.GetProductsByCategory(_serviceCategory.GetCategory(userCategoryBox.SelectedItem.ToString())))
                     {
                         table1.Rows.Add(product.ProductId, product.ProductName, _serviceCategory.GetCategory(product.CategoryId).CategoryName, product.RowInsertTime, product.RowUpdateTime);
                     }
@@ -141,7 +141,7 @@ namespace courseProjectWF
                 }
                 if (roleControl.SelectedTab == roleControl.TabPages["adminPage"])
                 {
-                    foreach (Product product in _serviceProduct.GetProductsByCategory(categoryBox.SelectedItem.ToString()))
+                    foreach (Product product in _serviceProduct.GetProductsByCategory(_serviceCategory.GetCategory(categoryBox.SelectedItem.ToString())))
                     {
                         table1.Rows.Add(product.ProductId, product.ProductName, _serviceCategory.GetCategory(product.CategoryId).CategoryName, product.RowInsertTime, product.RowUpdateTime);
                     }
@@ -151,7 +151,7 @@ namespace courseProjectWF
             }
             else
             {
-                foreach (Product product in _serviceProduct.GetProductsByCategory(userCategoryBox.SelectedItem.ToString()))
+                foreach (Product product in _serviceProduct.GetProductsByCategory(_serviceCategory.GetCategory(userCategoryBox.SelectedItem.ToString())))
                 {
                     table1.Rows.Add(product.ProductId, product.ProductName, _serviceCategory.GetCategory(product.CategoryId).CategoryName, product.RowInsertTime, product.RowUpdateTime);
                 }

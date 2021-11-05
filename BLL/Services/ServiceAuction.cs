@@ -17,7 +17,7 @@ namespace BLL.Interfaces
         {
             _auctionRepository = auctionRepository;
         }
-        public bool ActiveAuction(int id)
+        public Auction ActiveAuction(int id)
         {
             Auction auction = new Auction();
             auction.AuctionName = this._auctionRepository.Get(id).AuctionName;
@@ -30,10 +30,10 @@ namespace BLL.Interfaces
             auction.ProductId = this._auctionRepository.Get(id).ProductId;
             auction.RowUpdateTime = DateTime.Now;
             this._auctionRepository.Update(id, auction);
-            return true;
+            return auction;
         }
 
-        public bool DeactiveAuction(int id)
+        public Auction DeactiveAuction(int id)
         {
             Auction auction = new Auction();
             auction.AuctionName = this._auctionRepository.Get(id).AuctionName;
@@ -46,7 +46,7 @@ namespace BLL.Interfaces
             auction.ProductId = this._auctionRepository.Get(id).ProductId;
             auction.RowUpdateTime = DateTime.Now;
             this._auctionRepository.Update(id, auction);
-            return true;
+            return auction;
         }
 
         public List<Auction> GetAllActiveAuctions()
@@ -64,11 +64,8 @@ namespace BLL.Interfaces
         }
 
         public List<Auction> GetAllAuctions()
-        {
-            List<Auction> auctions = _auctionRepository.GetAll();
-            return auctions;
-        }
-        public void AddAuction(int productId, string auctionName, float startupPrice, float redemptionPrice, DateTime endtime)
+            => _auctionRepository.GetAll();
+        public Auction AddAuction(int productId, string auctionName, float startupPrice, float redemptionPrice, DateTime endtime)
         {
             Auction auction = new Auction();
             auction.AuctionName = auctionName;
@@ -79,6 +76,7 @@ namespace BLL.Interfaces
             auction.ProductId = productId;
             auction.RowInsertTime = DateTime.Now;
             this._auctionRepository.Create(auction);
+            return auction;
         }
     }
 }

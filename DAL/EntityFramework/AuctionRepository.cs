@@ -15,14 +15,13 @@ namespace DAL.EntityFramework
         }
         public Auction Create(Auction obj)
         {
-
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 AuctionDTO auction = new AuctionDTO();
                 db.Auctions.Add(auction.CreateMappToDTO(obj));
                 db.SaveChanges();
+                return auction.MappFromDTO();
             }
-            return obj;
         }
 
         public void Delete(int id)
@@ -46,6 +45,11 @@ namespace DAL.EntityFramework
             }
         }
 
+        public Auction Get(string id)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public List<Auction> GetAll()
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
@@ -59,13 +63,14 @@ namespace DAL.EntityFramework
             }
         }
 
-        public void Update(int id, Auction tmp)
+        public Auction Update(int id, Auction tmp)
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
                 AuctionDTO auction = db.Auctions.Where(x => x.AuctionId == id).SingleOrDefault();
                 auction.UpdateMappToDTO(tmp);
                 db.SaveChanges();
+                return auction.MappFromDTO();
             }
         }
     }
