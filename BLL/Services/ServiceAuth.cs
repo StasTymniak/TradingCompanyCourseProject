@@ -87,7 +87,7 @@ namespace BLL.Services
         public List<int> LogIn(string enteredLogin,string enteredPass)
         {
 
-            var user = _userRepository.LoginData(enteredLogin);
+            UserDTO user = _userRepository.LoginData(enteredLogin);
             string userpassDB = user.Password;
             logInData.Add(Convert.ToInt32(ConfirmPass(enteredPass, userpassDB)));
             logInData.Add(user.RoleId);
