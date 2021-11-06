@@ -12,39 +12,18 @@ namespace BLL.Services
     public class ServiceProduct : IServiceProduct
     {
         private readonly IRepository<Product> _productRepository;
-        
+
         public ServiceProduct(IRepository<Product> productRepository)
-        {
-            _productRepository = productRepository;
-        }
+            => this._productRepository = productRepository;
         public List<Product> GetAllProducts()
-        {
-            return _productRepository.GetAll();
-        }
+            => this._productRepository.GetAll();
 
         public Product GetProduct(int id)
-        {
-            return _productRepository.Get(id);
-        }
+            => this._productRepository.Get(id);
 
-        /*public List<Product> GetProductsByCategory(string requestedCategory)
-        {
-            List<Product> products = _productRepository.GetAll();
-            var selectedproducts = from product in products
-                                   where _categoryRepository.Get(product.CategoryId).CategoryName == requestedCategory
-                                   select product;
-
-            List<Product> findedproducts = new List<Product>();
-            foreach (Product item in selectedproducts)
-            {
-                findedproducts.Add(item);
-            }
-            return findedproducts;
-        }*/
         public List<Product> GetProductsByCategory(Category requestedCategory)
         {
-            List<Product> products = _productRepository.GetAll();
-            var query = products
+            IEnumerable<Product> products = this._productRepository.GetAll()
                 .Where(p => p.CategoryId == requestedCategory.CategoryId)
                 .Select(p => new Product
                 {
@@ -54,25 +33,26 @@ namespace BLL.Services
                     RowInsertTime = p.RowInsertTime,
                     RowUpdateTime = p.RowUpdateTime
                 });
-                return query.ToList();
-            
+
+            var productsFinded = new List<Product>();
+            foreach (Product item in products)
+                productsFinded.Add(item);
+
+            return productsFinded;
         }
 
         public List<Product> SortProducts()
         {
-            List<Product> products = _productRepository.GetAll();
-            var productsSorted = from product in products
-                                 orderby product.CategoryId descending
-                                 select product;
+            List<Product> products = this._productRepository.GetAll()
+                .OrderByDescending(p => p.CategoryId).ToList();
+ 
             List<Product> sortedproducts = new List<Product>();
-            foreach (Product item in productsSorted)
+            foreach (Product item in products)
             {
                 sortedproducts.Add(item);
             }
+
             return sortedproducts;
         }
-
-
-
     }
 }

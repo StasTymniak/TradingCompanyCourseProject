@@ -1,82 +1,74 @@
-﻿using BLL.Services;
-using DAL.EntityFramework;
-using DAL.Interfaces;
-using Domain;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using BLL.Services;
+using DAL.Interfaces;
+using Domain;
 
 namespace BLL.Interfaces
 {
     public class ServiceAuction : IServiceAuction
     {
         private readonly IRepository<Auction> _auctionRepository;
+
         public ServiceAuction(IRepository<Auction> auctionRepository)
-        {
-            _auctionRepository = auctionRepository;
-        }
+            => this._auctionRepository = auctionRepository;
+
         public Auction ActiveAuction(int id)
-        {
-            Auction auction = new Auction();
-            auction.AuctionName = this._auctionRepository.Get(id).AuctionName;
-            auction.StrtupPrice = this._auctionRepository.Get(id).StrtupPrice;
-            auction.RedemptionPrice = this._auctionRepository.Get(id).RedemptionPrice;
-            auction.ActivateTime = DateTime.Now;
-            auction.DeactivateTime = this._auctionRepository.Get(id).DeactivateTime;
-            auction.EndTime = this._auctionRepository.Get(id).EndTime;
-            auction.isActive = true;
-            auction.ProductId = this._auctionRepository.Get(id).ProductId;
-            auction.RowUpdateTime = DateTime.Now;
-            this._auctionRepository.Update(id, auction);
-            return auction;
-        }
+            => this._auctionRepository.Update(id,
+                new Auction
+                {
+                    AuctionName = this._auctionRepository.Get(id).AuctionName,
+                    StrtupPrice = this._auctionRepository.Get(id).StrtupPrice,
+                    RedemptionPrice = this._auctionRepository.Get(id).RedemptionPrice,
+                    ActivateTime = DateTime.Now,
+                    DeactivateTime = this._auctionRepository.Get(id).DeactivateTime,
+                    EndTime = this._auctionRepository.Get(id).EndTime,
+                    isActive = true,
+                    ProductId = this._auctionRepository.Get(id).ProductId,
+                    RowUpdateTime = DateTime.Now
+                });
 
         public Auction DeactiveAuction(int id)
-        {
-            Auction auction = new Auction();
-            auction.AuctionName = this._auctionRepository.Get(id).AuctionName;
-            auction.StrtupPrice = this._auctionRepository.Get(id).StrtupPrice;
-            auction.RedemptionPrice = this._auctionRepository.Get(id).RedemptionPrice;
-            auction.ActivateTime = this._auctionRepository.Get(id).ActivateTime;
-            auction.DeactivateTime = DateTime.Now;
-            auction.EndTime = this._auctionRepository.Get(id).EndTime;
-            auction.isActive = false;
-            auction.ProductId = this._auctionRepository.Get(id).ProductId;
-            auction.RowUpdateTime = DateTime.Now;
-            this._auctionRepository.Update(id, auction);
-            return auction;
-        }
+        => this._auctionRepository.Update(id,
+                new Auction
+                {
+                    AuctionName = this._auctionRepository.Get(id).AuctionName,
+                    StrtupPrice = this._auctionRepository.Get(id).StrtupPrice,
+                    RedemptionPrice = this._auctionRepository.Get(id).RedemptionPrice,
+                    ActivateTime = DateTime.Now,
+                    DeactivateTime = this._auctionRepository.Get(id).DeactivateTime,
+                    EndTime = this._auctionRepository.Get(id).EndTime,
+                    isActive = false,
+                    ProductId = this._auctionRepository.Get(id).ProductId,
+                    RowUpdateTime = DateTime.Now
+                });
 
         public List<Auction> GetAllActiveAuctions()
         {
-            List<Auction> auctions = _auctionRepository.GetAll();
-            var selectedauctions = from auction in auctions
-                                   where auction.isActive == true
-                                   select auction;
+            IEnumerable<Auction> selectedauctions = _auctionRepository
+                .GetAll().FindAll(a=>a.isActive==true);
             List<Auction> findedauctions = new List<Auction>();
             foreach (Auction item in selectedauctions)
-            {
                 findedauctions.Add(item);
-            }
             return findedauctions;
         }
 
         public List<Auction> GetAllAuctions()
             => _auctionRepository.GetAll();
+
         public Auction AddAuction(int productId, string auctionName, float startupPrice, float redemptionPrice, DateTime endtime)
-        {
-            Auction auction = new Auction();
-            auction.AuctionName = auctionName;
-            auction.StrtupPrice = startupPrice;
-            auction.RedemptionPrice = redemptionPrice;
-            auction.EndTime = endtime;
-            auction.isActive = false;
-            auction.ProductId = productId;
-            auction.RowInsertTime = DateTime.Now;
-            this._auctionRepository.Create(auction);
-            return auction;
-        }
+            => this._auctionRepository.Create(
+                new Auction
+                {
+                    AuctionName = auctionName,
+                    StrtupPrice = startupPrice,
+                    RedemptionPrice = redemptionPrice,
+                    EndTime = endtime,
+                    isActive = false,
+                    ProductId = productId,
+                    RowInsertTime = DateTime.Now
+                });
     }
 }

@@ -9,7 +9,7 @@ namespace DAL.EntityFramework
 {
     public class AuctionRepository : IRepository<Auction>
     {
-        public string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        private string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
         public AuctionRepository()
         {
         }
@@ -26,18 +26,18 @@ namespace DAL.EntityFramework
 
         public void Delete(int id)
         {
-        using (TradingCompanyContext db = new TradingCompanyContext(conn))
-        {
-            var auction = db.Auctions.Where(x => x.AuctionId == id).SingleOrDefault();
-            if (auction != null)
+            using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {
-                db.Auctions.Remove(auction);
-                db.SaveChanges();
+                var auction = db.Auctions.Where(x => x.AuctionId == id).SingleOrDefault();
+                if (auction != null)
+                {
+                    db.Auctions.Remove(auction);
+                    db.SaveChanges();
+                }
             }
         }
-        }
 
-        public Domain.Auction Get(int id)
+        public Auction Get(int id)
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
             {

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
-using BLL.Interfaces;
+using Moq;
+
+using NUnit.Framework;
+
 using BLL.Services;
 using DAL.Interfaces;
 using DTO;
-using Moq;
-using NUnit.Framework;
+
 namespace BLLTests
 {
     internal class AuthServiceTest
@@ -18,8 +18,8 @@ namespace BLLTests
         [SetUp]
         public void Setup()
         {
-            _userRepo = new Mock<IUserRepository>();
-            _serviceAuth = new ServiceAuth(_userRepo.Object);
+            this._userRepo = new Mock<IUserRepository>();
+            this._serviceAuth = new ServiceAuth(_userRepo.Object);
         }
 
         [Test]
@@ -28,18 +28,18 @@ namespace BLLTests
             //Arrange
             UserDTO user_in = new UserDTO
             {
-                Id=1000,
-                Login="stas120900",
-                Password= "4.Yj+lrO6FWb6WDTG7je2RPw==.peBYcNMPsK78IhjWPkCtiNZO9Q5BIFBdszFJgoYbyhY=",
-                RoleId=1,
+                Id = 1000,
+                Login = "stas120900",
+                Password = "4.Yj+lrO6FWb6WDTG7je2RPw==.peBYcNMPsK78IhjWPkCtiNZO9Q5BIFBdszFJgoYbyhY=",
+                RoleId = 1,
             };
-            List<int> expected_list = new List<int>() {1,1};
+            List<int> expected_list = new List<int>() { 1, 1 };
             string entered_login = "stas120900";
             string entered_password = "123";
-            _userRepo.Setup(u=>u.LoginData(entered_login))
+            this._userRepo.Setup(u => u.LoginData(entered_login))
                         .Returns(user_in);
             //Act
-            List<int> res = _serviceAuth.LogIn(entered_login, entered_password);
+            List<int> res = this._serviceAuth.LogIn(entered_login, entered_password);
             //Assert
             Assert.AreEqual(expected_list, res);
         }

@@ -12,12 +12,10 @@ namespace BLL.Services
 {
     public class ServiceAuth : IServiceAuth
     {
-        List<int> logInData = new List<int>();
+        private List<int> _logInData = new List<int>();
         private readonly IUserRepository _userRepository;
         public ServiceAuth(IUserRepository userRepository)
-        {
-            _userRepository = userRepository;
-        }
+            => this._userRepository = userRepository;
         private bool ConfirmPass(string enteredPass, string dbString)
         {
             string[] objects = dbString.Split('.');
@@ -82,16 +80,16 @@ namespace BLL.Services
             user.Password = pass;
             Console.Write("Role ID ");
             user.RoleId = Convert.ToInt32(Console.ReadLine());
-            _userRepository.Create(user);
+            this._userRepository.Create(user);
         }
         public List<int> LogIn(string enteredLogin,string enteredPass)
         {
 
-            UserDTO user = _userRepository.LoginData(enteredLogin);
+            UserDTO user = this._userRepository.LoginData(enteredLogin);
             string userpassDB = user.Password;
-            logInData.Add(Convert.ToInt32(ConfirmPass(enteredPass, userpassDB)));
-            logInData.Add(user.RoleId);
-            return logInData;
+            this._logInData.Add(Convert.ToInt32(ConfirmPass(enteredPass, userpassDB)));
+            this._logInData.Add(user.RoleId);
+            return this._logInData;
         }
     }
 }
