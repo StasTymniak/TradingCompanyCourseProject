@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
+using Moq;
+using NUnit.Framework;
+
 using BLL.Services;
 using DAL.Interfaces;
 using Domain;
-using Moq;
-using NUnit.Framework;
 
 namespace BLLTests
 {

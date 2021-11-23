@@ -1,19 +1,21 @@
-﻿using BLL.Interfaces;
-using DAL.Interfaces;
-using DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+
+using BLL.Interfaces;
+using DAL.Interfaces;
+using DTO;
 
 namespace BLL.Services
 {
     public class ServiceAuth : IServiceAuth
     {
-        private List<int> _logInData = new List<int>();
         private readonly IUserRepository _userRepository;
+
+        private List<int> _logInData = new List<int>();
+
+
         public ServiceAuth(IUserRepository userRepository)
             => this._userRepository = userRepository;
         private bool ConfirmPass(string enteredPass, string dbString)
@@ -30,7 +32,7 @@ namespace BLL.Services
         }
         private string GenerateSalt()
         {
-            RNGCryptoServiceProvider rncCsp = new RNGCryptoServiceProvider();
+            var rncCsp = new RNGCryptoServiceProvider();
             byte[] salt = new byte[16];
             rncCsp.GetBytes(salt);
             return Convert.ToBase64String(salt);
@@ -70,7 +72,7 @@ namespace BLL.Services
         }
         public void RegUser()
         {
-            UserDTO user = new UserDTO();
+            var user = new UserDTO();
             string passC;
             Console.Write("Login ");
             user.Login = Console.ReadLine();
@@ -82,7 +84,7 @@ namespace BLL.Services
             user.RoleId = Convert.ToInt32(Console.ReadLine());
             this._userRepository.Create(user);
         }
-        public List<int> LogIn(string enteredLogin,string enteredPass)
+        public List<int> LogIn(string enteredLogin, string enteredPass)
         {
 
             UserDTO user = this._userRepository.LoginData(enteredLogin);

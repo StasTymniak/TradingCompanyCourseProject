@@ -1,21 +1,16 @@
-﻿using DAL.Interfaces;
-using DTO;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using DAL.Interfaces;
+using DTO;
 
 namespace DAL.ADO.NET
 {
     public class UserRepository : IUserRepository
     {
         public string _conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
-        public UserRepository()
-        {           
-        }
+
         public void Create(UserDTO user)
         {
             using (SqlConnection conn = new SqlConnection(_conn))
@@ -24,8 +19,8 @@ namespace DAL.ADO.NET
                 {
                     conn.Open();
                     cmd.CommandText = @"
-INSERT INTO Users (Login, Password, RoleId)
-VALUES (@login,@pass,@roleid)";
+                        INSERT INTO Users (Login, Password, RoleId)
+                        VALUES (@login,@pass,@roleid)";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@login", user.Login);
                     cmd.Parameters.AddWithValue("@pass", user.Password);
@@ -74,6 +69,7 @@ VALUES (@login,@pass,@roleid)";
                 }
             }
         }
+
         public List<UserDTO> GetAll()
         {
             using (SqlConnection conn = new SqlConnection(_conn))

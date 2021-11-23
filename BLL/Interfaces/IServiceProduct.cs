@@ -1,9 +1,6 @@
-﻿using System;
+﻿using System.Collections.Generic;
+
 using Domain;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
@@ -12,7 +9,6 @@ namespace BLL.Services
         List<Product> GetAllProducts();
         Product GetProduct(int id);
         List<Product> SortProducts();
-        //List<Product> GetProductsByCategory(string category);
         List<Product> GetProductsByCategory(Category requestedCategory);
     }
 }

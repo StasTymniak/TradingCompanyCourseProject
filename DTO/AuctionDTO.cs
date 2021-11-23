@@ -1,6 +1,7 @@
-﻿using Domain;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
+
+using Domain;
 
 namespace DTO
 {
@@ -18,6 +19,7 @@ namespace DTO
         public int ProductId { get; set; }
         public DateTime RowInsertTime { get; set; }
         public DateTime RowUpdateTime { get; set; }
+
         public Auction MappFromDTO() => new Auction
         {
             AuctionId = this.AuctionId,

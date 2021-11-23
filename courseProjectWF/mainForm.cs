@@ -1,9 +1,10 @@
-﻿using BLL.Interfaces;
-using BLL.Services;
-using Domain;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
+
+using BLL.Interfaces;
+using BLL.Services;
+using Domain;
 
 namespace courseProjectWF
 {
@@ -199,18 +200,16 @@ namespace courseProjectWF
         {
             Application.Restart();
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+   
         private void btnDeactivateAuction_Click(object sender, EventArgs e)
         {
             _serviceAuction.DeactiveAuction(auctionChosenId);
             LoadAuctions();
         }
-
         private void btnActivateAuction_Click(object sender, EventArgs e)
         {
             _serviceAuction.ActiveAuction(auctionChosenId);

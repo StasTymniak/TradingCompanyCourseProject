@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
+
 using Domain;
 
 namespace DTO
@@ -13,6 +13,7 @@ namespace DTO
         public string CategoryName { get; set; }
         public DateTime RowInsertTime { get; set; }
         public DateTime RowUpdateTime { get; set; }
+
         public Category MappFromDTO() => new Category
         {
             CategoryId=this.CategoryId,

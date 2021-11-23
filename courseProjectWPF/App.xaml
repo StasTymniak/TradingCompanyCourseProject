@@ -1,0 +1,23 @@
+﻿<Application x:Class="courseProjectWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:courseProjectWPF"
+             xmlns:views="clr-namespace:courseProjectWPF.Views"
+             xmlns:viewmodels="clr-namespace:courseProjectWPF.ViewModels"
+             xmlns:windows="clr-namespace:courseProjectWPF.Windows"
+             StartupUri="StartUp.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:CategoryViewModel}">
+            <views:CategoryView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ProductViewModel}">
+            <views:ProductView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:UserMainViewModel}">
+            <windows:UserWindow/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:AdminMainViewModel}">
+            <windows:AdminWindow/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

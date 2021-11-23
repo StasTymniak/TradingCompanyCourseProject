@@ -55,7 +55,17 @@
       "ProjectGuid": "f1d39dd3-70f1-4a6b-9d2e-8add159549ee",
       "DisplayName": "BLLTests",
       "ColorIndex": 9
+    },
+    "d96cb2e7-9063-42c8-b2f3-15817f671a88": {
+      "ProjectGuid": "d96cb2e7-9063-42c8-b2f3-15817f671a88",
+      "DisplayName": "courseProjectWPF",
+      "ColorIndex": 10
+    },
+    "2f85204c-a01c-4fe3-8aff-6a7dfc025775": {
+      "ProjectGuid": "2f85204c-a01c-4fe3-8aff-6a7dfc025775",
+      "DisplayName": "WPF",
+      "ColorIndex": 11
     }
   },
-  "NextColorIndex": 10
+  "NextColorIndex": 12
 }

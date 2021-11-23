@@ -19,7 +19,7 @@ namespace DALTests
         [OneTimeSetUp]
         public void InitialSetupTest()
         {
-            categoryRep = new CategoryRepository(_connection);
+            categoryRep = new CategoryRepository();
         }
 
         [Test]

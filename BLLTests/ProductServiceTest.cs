@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
+using Moq;
+using NUnit.Framework;
+
 using BLL.Services;
 using DAL.Interfaces;
 using Domain;
-using Moq;
-using NUnit.Framework;
+
 
 namespace BLLTests
 {
@@ -19,7 +21,7 @@ namespace BLLTests
         public void Setup()
         {
             _productRepo = new Mock<IRepository<Product>>(MockBehavior.Strict);
-            _serviceProduct = new ServiceProduct(_productRepo.Object);
+            //_serviceProduct = new ServiceProduct(_productRepo.Object);
         }
         [Test]
         public void GetAllProducts_ReturnList_AreEqual()
@@ -36,7 +38,6 @@ namespace BLLTests
                 new Product{ProductId=1,ProductName="Iphone 12",CategoryId=5},
                 new Product{ProductId=2,ProductName="Dune",CategoryId=6},
                 new Product{ProductId=3,ProductName="Iphone 13",CategoryId=5}
-
             };
             _productRepo.Setup(p => p.GetAll())
                         .Returns(products_in);

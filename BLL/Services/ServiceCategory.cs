@@ -1,7 +1,8 @@
-﻿using BLL.Interfaces;
+﻿using System.Collections.Generic;
+
+using BLL.Interfaces;
 using DAL.Interfaces;
 using Domain;
-using System.Collections.Generic;
 
 namespace BLL.Services
 {
@@ -20,6 +21,5 @@ namespace BLL.Services
 
         public Category GetCategory(string name)
             => this._categoryRepository.Get(name);
-
     }
 }

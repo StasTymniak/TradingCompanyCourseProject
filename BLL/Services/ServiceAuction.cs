@@ -46,14 +46,8 @@ namespace BLL.Interfaces
                 });
 
         public List<Auction> GetAllActiveAuctions()
-        {
-            IEnumerable<Auction> selectedauctions = _auctionRepository
-                .GetAll().FindAll(a=>a.isActive==true);
-            List<Auction> findedauctions = new List<Auction>();
-            foreach (Auction item in selectedauctions)
-                findedauctions.Add(item);
-            return findedauctions;
-        }
+            => this._auctionRepository
+                .GetAll().FindAll(a => a.isActive == true).ToList();
 
         public List<Auction> GetAllAuctions()
             => _auctionRepository.GetAll();

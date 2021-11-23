@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Domain;
+
 namespace DTO
 {
     public class ProductDTO
@@ -11,6 +13,8 @@ namespace DTO
         public int CategoryId { get; set; }
         public DateTime RowInsertTime { get; set; }
         public DateTime RowUpdateTime { get; set; }
+
+
         public Product MappFromDTO() => new Product
         {
             ProductId = this.ProductId,
@@ -19,7 +23,6 @@ namespace DTO
             RowInsertTime = this.RowInsertTime,
             RowUpdateTime = this.RowUpdateTime
         };
-
         public ProductDTO CreateMappToDTO(Product product)
         {
             this.ProductId = this.ProductId;

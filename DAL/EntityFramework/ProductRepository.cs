@@ -1,9 +1,12 @@
-﻿using DAL.Interfaces;
-using Domain;
-using DTO;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+
+using Microsoft.EntityFrameworkCore;
+
+using DAL.Interfaces;
+using Domain;
+using DTO;
 
 namespace DAL.EntityFramework
 {
@@ -11,9 +14,7 @@ namespace DAL.EntityFramework
     {
 
         public string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
-        public ProductRepository()
-        {
-        }
+
         public Product Create(Product obj)
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
@@ -37,10 +38,12 @@ namespace DAL.EntityFramework
                 }
             }
         }
+
         public Product Get(string id)
         {
             throw new System.NotImplementedException();
         }
+
         public Product Get(int id)
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))

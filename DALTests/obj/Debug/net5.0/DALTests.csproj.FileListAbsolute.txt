@@ -323,3 +323,5 @@ C:\Users\tymniak\source\repos\TradingCompanyCourseProject\DALTests\obj\Debug\net
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\DALTests\obj\Debug\net5.0\ref\DALTests.dll
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\DALTests\obj\Debug\net5.0\DALTests.pdb
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\DALTests\obj\Debug\net5.0\DALTests.genruntimeconfig.cache
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\DALTests\bin\Debug\net5.0\Unity.Abstractions.dll
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\DALTests\bin\Debug\net5.0\Unity.Container.dll

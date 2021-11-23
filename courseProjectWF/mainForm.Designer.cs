@@ -157,7 +157,7 @@
             this.userProductdataGrid.Name = "userProductdataGrid";
             this.userProductdataGrid.RowHeadersWidth = 51;
             this.userProductdataGrid.RowTemplate.Height = 29;
-            this.userProductdataGrid.Size = new System.Drawing.Size(633, 456);
+            this.userProductdataGrid.Size = new System.Drawing.Size(660, 456);
             this.userProductdataGrid.TabIndex = 0;
             // 
             // userAuctionPage
@@ -366,7 +366,7 @@
             this.AuctionPage.Location = new System.Drawing.Point(4, 29);
             this.AuctionPage.Name = "AuctionPage";
             this.AuctionPage.Padding = new System.Windows.Forms.Padding(3);
-            this.AuctionPage.Size = new System.Drawing.Size(1035, 473);
+            this.AuctionPage.Size = new System.Drawing.Size(1035, 467);
             this.AuctionPage.TabIndex = 1;
             this.AuctionPage.Text = "Auctions";
             this.AuctionPage.UseVisualStyleBackColor = true;

@@ -45,8 +45,7 @@ namespace courseProjectWF
                      .RegisterType<IUserRepository, UserRepository>()
                      .RegisterType<IRepository<Auction>, AuctionRepository>()
                      .RegisterType<IRepository<Product>, ProductRepository>()
-                     .RegisterType<IRepository<Category>, CategoryRepository>();
-            
+                     .RegisterType<IRepository<Category>, CategoryRepository>();           
         }
     }
 }

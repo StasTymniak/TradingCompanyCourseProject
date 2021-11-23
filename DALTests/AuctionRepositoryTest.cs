@@ -19,7 +19,7 @@ namespace DALTests
         [OneTimeSetUp]
         public void InitialSetupTest()
         {
-            auctionRep = new AuctionRepository(_connection);
+            auctionRep = new AuctionRepository();
         }
 
         [Test]

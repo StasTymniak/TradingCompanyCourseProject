@@ -1,18 +1,16 @@
-﻿using DAL.Interfaces;
-using Domain;
-using DTO;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+
+using DAL.Interfaces;
+using Domain;
+using DTO;
 
 namespace DAL.EntityFramework
 {
     public class AuctionRepository : IRepository<Auction>
     {
         private string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
-        public AuctionRepository()
-        {
-        }
         public Auction Create(Auction obj)
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))

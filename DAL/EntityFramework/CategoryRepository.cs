@@ -1,18 +1,18 @@
-﻿using DAL.Interfaces;
-using Domain;
-using DTO;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+
+using DAL.Interfaces;
+using Domain;
+using DTO;
 
 namespace DAL.EntityFramework
 {
     public class CategoryRepository : IRepository<Category>
     {
-        public string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
-        public CategoryRepository()
-        {
-        }
+        //public string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        string conn = ConfigurationManager.AppSettings["connString"].ToString();
+
         public Category Create(Category obj)
         {
             using (TradingCompanyContext db = new TradingCompanyContext(conn))
@@ -23,7 +23,6 @@ namespace DAL.EntityFramework
             }
             return obj;
         }
-
 
         public void Delete(int id)
         {
