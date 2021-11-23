@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid>
-        <!--<Grid.RowDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
@@ -47,7 +47,6 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <ContentControl Grid.Row="1" Content="{Binding SelectedViewModel}"/>-->
-        <ContentControl Content="{Binding SelectedViewModel}"/>
+        <ContentControl Grid.Row="1" Content="{Binding SelectedViewModel}"/>
     </Grid>
 </Window>

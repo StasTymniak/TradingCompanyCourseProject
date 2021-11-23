@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
+using courseProjectWPF.ViewModels;
+
+using DAL.EntityFramework;
+using DAL.Interfaces;
+using Domain;
+using BLL.Interfaces;
+using BLL.Services;
+
+using Unity;
 
 namespace courseProjectWPF.Windows
 {
@@ -19,9 +20,22 @@ namespace courseProjectWPF.Windows
     /// </summary>
     public partial class AdminWindow : Window
     {
+        public static UnityContainer Container;
         public AdminWindow()
         {
+
+            ConfigureUnity();
             InitializeComponent();
+            DataContext = Container.Resolve<AdminMainViewModel>();
+
+        }
+        static private void ConfigureUnity()
+        {
+            Container = new UnityContainer();
+            Container.RegisterType<IServiceCategory, ServiceCategory>()
+                     .RegisterType<IRepository<Category>, CategoryRepository>()
+                     .RegisterType<IServiceProduct, ServiceProduct>()
+                     .RegisterType<IRepository<Product>, ProductRepository>();
         }
     }
 }

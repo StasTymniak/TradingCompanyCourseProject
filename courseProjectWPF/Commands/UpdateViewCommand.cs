@@ -10,11 +10,11 @@ namespace courseProjectWPF.Commands
 {
     internal class UpdateViewCommand : ICommand
     {
-        private MainViewModel _mainViewModel;
+        private AdminMainViewModel _adminViewModel;
 
-        public UpdateViewCommand(MainViewModel mainViewModel)
+        public UpdateViewCommand(AdminMainViewModel adminViewModel)
         {
-            this._mainViewModel = mainViewModel;
+            this._adminViewModel = adminViewModel;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -28,11 +28,11 @@ namespace courseProjectWPF.Commands
         {
             if (parameter.ToString() == "Categories")
             {
-                _mainViewModel.SelectedViewModel = new CategoryViewModel(_mainViewModel.ServiceCategory);
+                this._adminViewModel.SelectedViewModel = new CategoryViewModel(this._adminViewModel.ServiceCategory);
             }
             else if(parameter.ToString() == "Products")
             {
-                _mainViewModel.SelectedViewModel = new ProductViewModel(_mainViewModel.ServiceProduct, _mainViewModel.ServiceCategory);
+                this._adminViewModel.SelectedViewModel = new ProductViewModel(this._adminViewModel.ServiceProduct, this._adminViewModel.ServiceCategory);
             }
         }
     }

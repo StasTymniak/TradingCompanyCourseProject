@@ -20,7 +20,7 @@ namespace courseProjectWPF.ViewModels
             this._serviceCategory = serviceCategory;
             this._serviceProduct = serviceProduct;
             this._selectedViewModel = new CategoryViewModel(_serviceCategory);
-            UpdateViewCommand = new UpdateViewCommand(this);
+            //UpdateViewCommand = new UpdateViewCommand(this);
             
         }
 
