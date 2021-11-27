@@ -18,7 +18,7 @@ namespace courseProjectWF
         IServiceAuth _serviceAuth;
         IServiceProduct _serviceProduct;
         int userRole;
-        List<int> logInData;
+        public List<int> logInData;
         mainForm MainForm;
         void UISetup()
         {
@@ -40,9 +40,10 @@ namespace courseProjectWF
 
             if(logInData[0]==1)
             {
-                this.Hide();
-                MainForm = new mainForm(_serviceAuction, _serviceProduct, _serviceCategory, logInData[1]);
-                MainForm.ShowDialog();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+                //MainForm = new mainForm(_serviceAuction, _serviceProduct, _serviceCategory, logInData[1]);
+                //MainForm.ShowDialog();
             }
             else
                 MessageBox.Show("Invalid data");

@@ -14,16 +14,31 @@ namespace courseProjectWPF.ViewModels
     {
         private IServiceCategory _serviceCategory;
         private IServiceProduct _serviceProduct;
+        private IServiceAuth _serviceAuth;
         private BaseViewModel _selectedViewModel;
-        public MainViewModel(IServiceCategory serviceCategory, IServiceProduct serviceProduct)
+        private BaseViewModel _selectedAuthViewModel;
+        private string _userRole;
+        
+
+        public MainViewModel(IServiceCategory serviceCategory, IServiceProduct serviceProduct, IServiceAuth serviceAuth)
         {
             this._serviceCategory = serviceCategory;
             this._serviceProduct = serviceProduct;
-            this._selectedViewModel = new CategoryViewModel(_serviceCategory);
-            //UpdateViewCommand = new UpdateViewCommand(this);
-            
+            this._serviceAuth = serviceAuth;
+            this._selectedViewModel = new ProductViewModel(_serviceProduct, _serviceCategory);
+            this._selectedAuthViewModel = new LoginViewModel(this,_serviceAuth);
+            UpdateViewCommand = new UpdateViewCommand(this);
+           
         }
-
+        public string UserRole
+        {
+            get => this._userRole;
+            set
+            {
+                this._userRole = value;
+                OnPropertyChanged("UserRole");
+            }
+        }
         public BaseViewModel SelectedViewModel
         {
             get => this._selectedViewModel;
@@ -31,6 +46,15 @@ namespace courseProjectWPF.ViewModels
             {
                 this._selectedViewModel = value;
                 OnPropertyChanged(nameof(SelectedViewModel));
+            }
+        }
+        public BaseViewModel SelectedAuthViewModel
+        {
+            get => this._selectedAuthViewModel;
+            set
+            {
+                this._selectedAuthViewModel = value;
+                OnPropertyChanged(nameof(SelectedAuthViewModel));
             }
         }
 

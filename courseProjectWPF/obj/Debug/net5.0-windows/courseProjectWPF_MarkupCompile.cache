@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\App.xaml
-7766239962
+4-1099834934
 
-17375552333
+151734527940
 2241759820000
-LogInWindow.xaml;MainWindow.xaml;StartUp.xaml;Views\CategoryView.xaml;Views\ProductView.xaml;Windows\AdminWindow.xaml;Windows\UserWindow.xaml;
+Views\CategoryView.xaml;Views\LoginView.xaml;Views\ProductView.xaml;Windows\MainWindow.xaml;
 
 False
 

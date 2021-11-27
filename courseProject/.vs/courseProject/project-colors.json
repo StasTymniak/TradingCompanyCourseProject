@@ -65,7 +65,12 @@
       "ProjectGuid": "2f85204c-a01c-4fe3-8aff-6a7dfc025775",
       "DisplayName": "WPF",
       "ColorIndex": 11
+    },
+    "208efd50-b989-4c4e-b184-8d4e32127699": {
+      "ProjectGuid": "208efd50-b989-4c4e-b184-8d4e32127699",
+      "DisplayName": "courseProjectWPF",
+      "ColorIndex": 12
     }
   },
-  "NextColorIndex": 12
+  "NextColorIndex": 13
 }

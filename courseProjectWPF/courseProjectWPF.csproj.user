@@ -7,45 +7,30 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="LogInWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="StartUp.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\CategoryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ProductView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\AdminWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\UserWindow.xaml.cs">
+    <Compile Update="Windows\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="LogInWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="StartUp.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\CategoryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ProductView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\AdminWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Windows\UserWindow.xaml">
+    <Page Update="Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

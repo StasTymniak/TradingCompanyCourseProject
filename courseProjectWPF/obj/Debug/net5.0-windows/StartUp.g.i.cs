@@ -53,7 +53,7 @@ namespace courseProjectWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/courseProjectWPF;component/startup.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/courseProjectWPF;V1.0.0.0;component/startup.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\StartUp.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

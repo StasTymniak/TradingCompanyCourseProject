@@ -7,6 +7,7 @@ using Domain;
 using System;
 using System.Windows.Forms;
 using Unity;
+using Unity.Resolution;
 
 namespace courseProjectWF
 {
@@ -24,7 +25,8 @@ namespace courseProjectWF
             LogInForm logInForm = Container.Resolve<LogInForm>();
             if (logInForm.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(Container.Resolve<mainForm>());
+                var log = logInForm.logInData;
+                Application.Run(Container.Resolve<mainForm>(new ParameterOverride("roleID",log[1])));
             }
             else
             {

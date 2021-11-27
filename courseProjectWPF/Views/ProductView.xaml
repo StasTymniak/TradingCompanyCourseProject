@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:courseProjectWPF.Views"
+             xmlns:local="clr-namespace:courseProjectWPF.Views" xmlns:viewmodels="clr-namespace:courseProjectWPF.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ProductViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -27,16 +27,61 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button 
-            Grid.Row="0"
-            Height="40"
-            Content="Books"
-            Command="{Binding GetBooks}"></Button>
-        <DataGrid Grid.Row="1" x:Name="Imported" VerticalAlignment="Top"
-          ItemsSource="{Binding Products_Category}"
-          AutoGenerateColumns="False" CanUserResizeColumns="False"
-          FontSize="15">
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Text="{Binding SelectedCategoryName}"></TextBox>
+            <Button Grid.Column="1" Content="Find" Command="{Binding FindProductsCommand}" CommandParameter="{Binding SelectedCategoryName}"></Button>
+        </Grid>
+        <DataGrid 
+            Grid.Row="1" x:Name="Imported" 
+            VerticalAlignment="Top"
+            ItemsSource="{Binding Products_Category}"
+            SelectedItem="{Binding SelectedItem}"      
+            AutoGenerateColumns="False" 
+            CanUserResizeColumns="False"
+            FontSize="15"
+            Background="BlanchedAlmond"
+            RowBackground="BlanchedAlmond"
+            ColumnWidth="*"
+            HorizontalGridLinesBrush="Transparent"
+            VerticalGridLinesBrush="Transparent"
+            HorizontalScrollBarVisibility="Hidden"
+            VerticalScrollBarVisibility="Hidden"
+            RowHeaderWidth="0">
+            
+            <DataGrid.Resources>
+                
+                <Style TargetType="ScrollBar">
+                    <Setter Property="Visibility" Value="Hidden" />
+                </Style>
+                
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="True">
+                            <Setter Property="Background" Value="#CCDAFF" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+            
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Azure" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                    <Setter Property="Margin" Value="-1,-1,0,0" />
+                    <Setter Property="Height" Value="28" />
+                    <Setter Property="Width" Value="auto"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=Item1.ProductId}"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Item1.ProductName}"/>
@@ -45,5 +90,8 @@
                 <DataGridTextColumn Header="UpdateTime" Binding="{Binding Path=Item1.RowUpdateTime}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel Grid.Row="2" DataContext="{Binding SelectedItem}">
+            <TextBox FontSize="30" Text="{Binding Path=Item1.ProductName, Mode=TwoWay}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

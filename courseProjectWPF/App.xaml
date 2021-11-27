@@ -5,19 +5,20 @@
              xmlns:views="clr-namespace:courseProjectWPF.Views"
              xmlns:viewmodels="clr-namespace:courseProjectWPF.ViewModels"
              xmlns:windows="clr-namespace:courseProjectWPF.Windows"
-             StartupUri="StartUp.xaml">
+             StartupUri="Windows/MainWindow.xaml">
     <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+            <views:LoginView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:CategoryViewModel}">
             <views:CategoryView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:ProductViewModel}">
             <views:ProductView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:UserMainViewModel}">
-            <windows:UserWindow/>
+        <DataTemplate DataType="{x:Type viewmodels:MainViewModel}">
+            <windows:MainWindow/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:AdminMainViewModel}">
-            <windows:AdminWindow/>
-        </DataTemplate>
+        
     </Application.Resources>
 </Application>

@@ -14,57 +14,81 @@ using System.Windows.Input;
 
 namespace courseProjectWPF.ViewModels
 {
-    public class ProductViewModel:BaseViewModel,INotifyPropertyChanged
+    public class ProductViewModel:BaseViewModel, INotifyPropertyChanged
     {
         private Product _selectedProduct;
+        private string _selectedCategoryName;
+        private Tuple<Product, string> _selectedItem;
         private IServiceProduct _serviceProduct;
         private IServiceCategory _serviceCategory;
         private ObservableCollection<Tuple<Product, string>> _Products_Category = new ObservableCollection<Tuple<Product, string>>();
         public ICommand GetBooks { get; set; }
+        public ICommand FindProductsCommand { get; set; }
         public IEnumerable<Product> Products { get; set; }
-        public IServiceProduct serviceProduct { get => _serviceProduct;}
-        public IServiceCategory serviceCategory { get => _serviceCategory; }
+        public IServiceProduct serviceProduct { get => this._serviceProduct;}
+        public IServiceCategory serviceCategory { get => this._serviceCategory; }
         public Product SelectedProduct
         {
-            get { return _selectedProduct; }
+            get { return this._selectedProduct; }
             set
             {
-                _selectedProduct = value;
+                this._selectedProduct = value;
                 OnPropertyChanged("SelectedProduct");
+            }
+        }
+        public string SelectedCategoryName
+        {
+            get { return this._selectedCategoryName; }
+            set
+            {
+                this._selectedCategoryName = value;
+                OnPropertyChanged("SelectedCategoryName");
+            }
+        }
+        public Tuple<Product, string> SelectedItem
+        {
+            get { return this._selectedItem; }
+            set
+            {
+                this._selectedItem = value;
+                OnPropertyChanged("SelectedItem");
             }
         }
 
         public ObservableCollection<Tuple<Product, string>> Products_Category
         {
-            get => _Products_Category;
+            get => this._Products_Category;
             set
             {
-                _Products_Category = value;
+                this._Products_Category = value;
                 OnPropertyChanged("Products_Category");
             }
         }
         public ProductViewModel(IServiceProduct serviceProduct, IServiceCategory serviceCategory)
         {
-            _serviceProduct = serviceProduct;
-            _serviceCategory = serviceCategory;
+            this._serviceProduct = serviceProduct;
+            this._serviceCategory = serviceCategory;
             LoadData();
         }
 
         public void LoadData()
         {
-            Products = _serviceProduct.GetAllProducts();
+            Products = this._serviceProduct.GetAllProducts();
             foreach (Product product in Products)
             {
-                Products_Category.Add(new Tuple<Product, string>(product, _serviceCategory.GetCategory(product.CategoryId).CategoryName));
+                Products_Category.Add(new Tuple<Product, string>(product, this._serviceCategory.GetCategory(product.CategoryId).CategoryName));
             }
             GetBooks = new GetBooksCommand(this);
+            FindProductsCommand = new FindProductsCommand(this);
         }
 
+        #region INotify
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
+        #endregion
     }
 }

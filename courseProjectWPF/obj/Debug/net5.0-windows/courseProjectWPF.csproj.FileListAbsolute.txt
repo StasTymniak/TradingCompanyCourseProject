@@ -60,11 +60,9 @@ C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\bin\D
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\bin\Debug\net5.0-windows\DAL.pdb
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\bin\Debug\net5.0-windows\DTO.pdb
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\courseProjectWPF.csproj.AssemblyReference.cache
-C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\courseProjectWPF_MarkupCompile.cache
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\courseProjectWPF_MarkupCompile.lref
-C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\MainWindow.baml
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\courseProjectWPF.g.resources
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\courseProjectWPF.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\courseProjectWPF.AssemblyInfoInputs.cache
@@ -82,11 +80,7 @@ C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\D
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Views\CategoryView.baml
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Views\ProductView.g.cs
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Views\ProductView.baml
-C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\LoginWindow.g.cs
-C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\LoginWindow.baml
-C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\StartUp.g.cs
-C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\StartUp.baml
-C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Windows\UserWindow.g.cs
-C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Windows\UserWindow.baml
-C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Windows\AdminWindow.g.cs
-C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Windows\AdminWindow.baml
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Views\LoginView.g.cs
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Windows\MainWindow.g.cs
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Views\LoginView.baml
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Windows\MainWindow.baml
