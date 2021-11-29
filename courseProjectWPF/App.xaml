@@ -19,6 +19,11 @@
         <DataTemplate DataType="{x:Type viewmodels:MainViewModel}">
             <windows:MainWindow/>
         </DataTemplate>
-        
+        <DataTemplate DataType="{x:Type viewmodels:UserProductViewModel}">
+            <views:UserProductView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:AuctionViewModel}">
+            <views:AuctionView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

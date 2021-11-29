@@ -26,13 +26,31 @@ namespace courseProjectWPF.Commands
 
         public void Execute(object parameter)
         {
-            if (parameter.ToString() == "Categories")
+            if(_mainViewModel.UserRole == "Admin")
             {
-                this._mainViewModel.SelectedViewModel = new CategoryViewModel(this._mainViewModel.ServiceCategory);
+                if (parameter.ToString() == "Categories")
+                {
+                    this._mainViewModel.SelectedViewModel = new CategoryViewModel(this._mainViewModel.ServiceCategory);
+                }
+                else if (parameter.ToString() == "Products")
+                {
+                    this._mainViewModel.SelectedViewModel = new ProductViewModel(this._mainViewModel.ServiceProduct, this._mainViewModel.ServiceCategory,this._mainViewModel);
+                }
+                else if (parameter.ToString() == "Auctions")
+                {
+                    this._mainViewModel.SelectedViewModel = new AuctionViewModel(this._mainViewModel.ServiceProduct, this._mainViewModel.ServiceCategory,this._mainViewModel.ServiceAuction);
+                }
             }
-            else if(parameter.ToString() == "Products")
+            else
             {
-                this._mainViewModel.SelectedViewModel = new ProductViewModel(this._mainViewModel.ServiceProduct, this._mainViewModel.ServiceCategory);
+                if (parameter.ToString() == "Products")
+                {
+                    this._mainViewModel.SelectedViewModel = new UserProductViewModel();
+                }
+                else if (parameter.ToString() == "Categories")
+                {
+                    this._mainViewModel.SelectedViewModel =  new UserProductViewModel();
+                }
             }
         }
     }

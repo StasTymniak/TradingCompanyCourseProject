@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:courseProjectWPF.Views" xmlns:viewmodels="clr-namespace:courseProjectWPF.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ProductViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="880">
     <Grid>
         <!--<ListBox ItemsSource="{Binding Products_Category}">
             <ListBox.ItemTemplate>
@@ -90,8 +90,53 @@
                 <DataGridTextColumn Header="UpdateTime" Binding="{Binding Path=Item1.RowUpdateTime}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Row="2" DataContext="{Binding SelectedItem}">
-            <TextBox FontSize="30" Text="{Binding Path=Item1.ProductName, Mode=TwoWay}"/>
-        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column ="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" DataContext="{Binding SelectedItem}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="ID: "/>
+                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="{Binding Path=Item1.ProductId, Mode=TwoWay}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Product name: "/>
+                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="{Binding Path=Item1.ProductName, Mode=TwoWay}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Category: "/>
+                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="{Binding Path=Item2}"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Startup Price: "/>
+                        <TextBox Width="155" Foreground="Black" FontSize="25" Text="{Binding AuctionStartupPrice}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Redemption Price: "/>
+                        <TextBox Width="100" Foreground="Black" FontSize="25" Text="{Binding AuctionRedemptionPrice}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="EndTime: "/>
+                        <TextBox Width="200" Foreground="Black" FontSize="25" Text="{Binding AuctionEndTime}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            
+                    <Button Grid.Column="1" 
+                    Height="50" 
+                    Content="Create auction" 
+                    Margin="0,160,0,0"
+                    Foreground="Black"
+                    Command="{Binding CreateNewAuctionCommand}"/>
+        </Grid>
+        
     </Grid>
 </UserControl>

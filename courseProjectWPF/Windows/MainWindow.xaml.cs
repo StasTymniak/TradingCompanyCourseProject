@@ -47,6 +47,7 @@ namespace courseProjectWPF.Windows
             this.DragMove();
         }
         private void CloseCommandBinding_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        
         {
             if (MessageBox.Show("Close?", "Close", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {

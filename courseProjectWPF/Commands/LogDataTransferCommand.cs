@@ -30,14 +30,19 @@ namespace courseProjectWPF.Commands
             logData = this._logInViewModel.ServiceAuth.LogIn(this._logInViewModel.UserName, this._logInViewModel.UserPassword);
             if (logData[0] == 1)
             {
+                this._logInViewModel.IsLoggedIn = true;
+                this._logInViewModel.LoginViewButtonContent = "Log out";
                 if (logData[1] == 1)
                 {
                     this._logInViewModel.MainViewModel.UserRole = "Admin";
+                    
                 }
                 else
                 {
                     this._logInViewModel.MainViewModel.UserRole = "User";
                 }
+                logData.Clear();
+                this._logInViewModel.LoginButtonCommand = new LogOutCommand(this._logInViewModel);
             }
             else
             {

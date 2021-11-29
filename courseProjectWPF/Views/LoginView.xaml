@@ -6,29 +6,6 @@
              xmlns:local="clr-namespace:courseProjectWPF.Views"
              mc:Ignorable="d" 
              d:DesignHeight="85" Width="280">
-    <!--<Grid Margin="0,0,61,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Margin="15" Orientation="Horizontal">
-            <Label Content="Login" Foreground="White"/>
-            <TextBox Name="txtEmail" 
-                         Background="#545d6a"
-                         Foreground="White"
-                         FontSize="15"
-                         Width="70" 
-                         Height="20"/>
-            <Label Content="Password" Foreground="White"/>
-            <TextBox Name="txtPassword"
-                         Background="#545d6a"
-                         Foreground="White"
-                         Width="70" 
-                         Height="20"
-                         FontSize="15"/>
-        </StackPanel>
-        <Button Grid.Row="1" Width="70" Content="Submit" Margin="185,0,145,0"></Button>
-    </Grid>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"></RowDefinition>
@@ -50,8 +27,8 @@
                          Height="20"
                          FontSize="15"/>
         </StackPanel>
-        <Button Grid.Row="1" Width="60" Margin="179,0,41,0" Content="Log in"
-                Command="{Binding LogDataTransferCommand}">
+        <Button Grid.Row="1" Width="60" Margin="179,0,41,0" Content="{Binding LoginViewButtonContent}"
+                Command="{Binding LoginButtonCommand}">
         </Button>
     </Grid>
 </UserControl>

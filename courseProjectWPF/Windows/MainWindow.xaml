@@ -52,7 +52,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="880"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="85"/>
@@ -68,7 +68,9 @@
                              Foreground="White"
                              FontSize="16"
                              Height="50"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding UpdateViewCommand}"
+                             CommandParameter="Auctions"/>
                 <RadioButton Content="Products"
                              Foreground="White"
                              FontSize="16"

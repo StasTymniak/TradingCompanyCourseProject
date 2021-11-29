@@ -19,14 +19,23 @@ namespace courseProjectWPF.ViewModels
         private Product _selectedProduct;
         private string _selectedCategoryName;
         private Tuple<Product, string> _selectedItem;
+        private string _startupPrice;
+        private string _redemptionPrice;
+        private string _endTime;
         private IServiceProduct _serviceProduct;
         private IServiceCategory _serviceCategory;
+        private MainViewModel _mainViewModel;
         private ObservableCollection<Tuple<Product, string>> _Products_Category = new ObservableCollection<Tuple<Product, string>>();
-        public ICommand GetBooks { get; set; }
         public ICommand FindProductsCommand { get; set; }
+        public ICommand CreateNewAuctionCommand { get; set; }
         public IEnumerable<Product> Products { get; set; }
         public IServiceProduct serviceProduct { get => this._serviceProduct;}
         public IServiceCategory serviceCategory { get => this._serviceCategory; }
+
+        public MainViewModel MainViewModel
+        {
+            get => this._mainViewModel;
+        }
         public Product SelectedProduct
         {
             get { return this._selectedProduct; }
@@ -64,11 +73,42 @@ namespace courseProjectWPF.ViewModels
                 OnPropertyChanged("Products_Category");
             }
         }
-        public ProductViewModel(IServiceProduct serviceProduct, IServiceCategory serviceCategory)
+
+        public string AuctionStartupPrice
+        { 
+            get => this._startupPrice;
+            set
+            {
+                this._startupPrice = value;
+                OnPropertyChanged("AuctionStartupPrice");
+            }
+        }
+        public string AuctionRedemptionPrice
+        { 
+            get => this._redemptionPrice;
+            set
+            {
+                this._redemptionPrice = value;
+                OnPropertyChanged("AuctionRedemptionPrice");
+            }
+        }
+        public string AuctionEndTime
+        {
+            get => this._endTime;
+            set
+            {
+                this._endTime = value;
+                OnPropertyChanged("AuctionEndTime");
+            }
+        }
+
+        public ProductViewModel(IServiceProduct serviceProduct, IServiceCategory serviceCategory, MainViewModel mainViewModel)
         {
             this._serviceProduct = serviceProduct;
             this._serviceCategory = serviceCategory;
+            this._mainViewModel = mainViewModel;
             LoadData();
+            
         }
 
         public void LoadData()
@@ -78,7 +118,7 @@ namespace courseProjectWPF.ViewModels
             {
                 Products_Category.Add(new Tuple<Product, string>(product, this._serviceCategory.GetCategory(product.CategoryId).CategoryName));
             }
-            GetBooks = new GetBooksCommand(this);
+            CreateNewAuctionCommand = new CreateAuctionCommand(this, this._mainViewModel);
             FindProductsCommand = new FindProductsCommand(this);
         }
 

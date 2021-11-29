@@ -16,25 +16,46 @@ namespace courseProjectWPF.ViewModels
     {
         private string _userName;
         private string _userPassword;
+        private string _loginViewButtonContent = "Log in";
         private MainViewModel _mainViewModel;
         private IServiceAuth _serviceAuth;
+        private ICommand _loginButtonCommand;
 
-        public ICommand LogDataTransferCommand { get; set; }
+        public bool IsLoggedIn { get; set; }
+        public ICommand LogDataTransferCommand { get; set; }    
         public LoginViewModel(MainViewModel mainViewModel, IServiceAuth serviceAuth)
         {
             this._mainViewModel = mainViewModel;
             this._serviceAuth = serviceAuth;
-            this.LogDataTransferCommand = new LogDataTransferCommand(this);
-
+            this.LoginButtonCommand = new LogDataTransferCommand(this);
         }
 
+        public ICommand LoginButtonCommand
+        {
+            get => this._loginButtonCommand;
+            set
+            {
+                this._loginButtonCommand = value;
+                OnPropertyChanged("LoginButtonCommand");
+            }
+        }
         public string UserName
         {
             get => this._userName;
             set
             {
                 this._userName = value;
-                OnPropertyChanged("UserRole");
+                OnPropertyChanged("UserName");
+            }
+        }
+
+        public string LoginViewButtonContent
+        {
+            get => this._loginViewButtonContent;
+            set
+            {
+                this._loginViewButtonContent = value;
+                OnPropertyChanged("LoginViewButtonContent");
             }
         }
 

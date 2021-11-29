@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AuctionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\CategoryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -16,11 +19,17 @@
     <Compile Update="Views\ProductView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserProductView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\AuctionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\CategoryView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -28,6 +37,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ProductView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserProductView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\MainWindow.xaml">

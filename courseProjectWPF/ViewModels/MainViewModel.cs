@@ -14,21 +14,23 @@ namespace courseProjectWPF.ViewModels
     {
         private IServiceCategory _serviceCategory;
         private IServiceProduct _serviceProduct;
+        private IServiceAuction _serviceAuction;
         private IServiceAuth _serviceAuth;
         private BaseViewModel _selectedViewModel;
         private BaseViewModel _selectedAuthViewModel;
         private string _userRole;
-        
 
-        public MainViewModel(IServiceCategory serviceCategory, IServiceProduct serviceProduct, IServiceAuth serviceAuth)
+
+        public MainViewModel(IServiceCategory serviceCategory, IServiceProduct serviceProduct, IServiceAuth serviceAuth, IServiceAuction serviceAuction)
         {
             this._serviceCategory = serviceCategory;
             this._serviceProduct = serviceProduct;
             this._serviceAuth = serviceAuth;
-            this._selectedViewModel = new ProductViewModel(_serviceProduct, _serviceCategory);
-            this._selectedAuthViewModel = new LoginViewModel(this,_serviceAuth);
+            this._serviceAuction = serviceAuction;
+            //this._selectedViewModel = new ProductViewModel(_serviceProduct, _serviceCategory);
+            this._selectedAuthViewModel = new LoginViewModel(this, _serviceAuth);
             UpdateViewCommand = new UpdateViewCommand(this);
-           
+            
         }
         public string UserRole
         {
@@ -68,6 +70,11 @@ namespace courseProjectWPF.ViewModels
         {
             get => this._serviceProduct;
             set => this._serviceProduct = value;
+        }
+        public IServiceAuction ServiceAuction
+        {
+            get => this._serviceAuction;
+            set => this._serviceAuction = value;
         }
     }
 }
