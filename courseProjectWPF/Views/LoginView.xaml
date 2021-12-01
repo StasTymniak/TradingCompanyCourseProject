@@ -6,6 +6,13 @@
              xmlns:local="clr-namespace:courseProjectWPF.Views"
              mc:Ignorable="d" 
              d:DesignHeight="85" Width="280">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\Styles\ButtonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"></RowDefinition>
@@ -35,7 +42,8 @@
         </StackPanel>
         <Button Grid.Row="1" Width="60" Margin="179,0,41,0" Content="{Binding LoginViewButtonContent}"
                 Command="{Binding LoginButtonCommand}"
-                IsEnabled="{Binding ButtonLogInIsEnable}">
+                IsEnabled="{Binding ButtonLogInIsEnable}"
+                Style="{StaticResource RoundedButton}">
         </Button>
     </Grid>
 </UserControl>

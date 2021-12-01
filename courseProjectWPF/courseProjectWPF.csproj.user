@@ -27,6 +27,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Styles\ButtonDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\AuctionView.xaml">
       <SubType>Designer</SubType>
     </Page>

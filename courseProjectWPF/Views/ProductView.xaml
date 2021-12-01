@@ -6,24 +6,14 @@
              xmlns:local="clr-namespace:courseProjectWPF.Views" xmlns:viewmodels="clr-namespace:courseProjectWPF.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ProductViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="880">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\Styles\ButtonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
-        <!--<ListBox ItemsSource="{Binding Products_Category}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock FontSize="15" Text="{Binding Path=Item1.ProductId}"/>
-                        <TextBlock FontSize="15" Text="|"/>
-                        <TextBlock FontSize="15" Text="{Binding Path=Item1.ProductName}"/>
-                        <TextBlock FontSize="15" Text="|"/>
-                        <TextBlock FontSize="15" Text="{Binding Path=Item2}"/>
-                        <TextBlock FontSize="15" Text="|"/>
-                        <TextBlock FontSize="15" Text="{Binding Path=Item1.RowInsertTime}"/>
-                        <TextBlock FontSize="15" Text="|"/>
-                        <TextBlock FontSize="15" Text="{Binding Path=Item1.RowUpdateTime}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>-->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -34,8 +24,9 @@
                 <ColumnDefinition Width="50"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0" Text="{Binding SelectedCategoryName}"></TextBox>
-            <Button Grid.Column="1" Content="Find" Command="{Binding FindProductsCommand}" CommandParameter="{Binding SelectedCategoryName}"></Button>
+            <TextBox Grid.Column="0" Text="{Binding SelectedCategoryName}" Height="20"
+                     Background="#545d6a"></TextBox>
+            <Button HorizontalAlignment="Left" Grid.Column="1" Content="Find" Width="50" Height="20" Command="{Binding FindProductsCommand}" CommandParameter="{Binding SelectedCategoryName}" Style="{StaticResource RoundedButton}"></Button>
         </Grid>
         <DataGrid 
             Grid.Row="1" x:Name="Imported" 
@@ -43,13 +34,13 @@
             ItemsSource="{Binding Products_Category}"
             SelectedItem="{Binding SelectedItem}"      
             AutoGenerateColumns="False" 
-            CanUserResizeColumns="False"
-            FontSize="15"
-            Background="BlanchedAlmond"
-            RowBackground="BlanchedAlmond"
+            CanUserResizeColumns="True"
+            FontSize="10"
+            Background="#1b3a4b"
+            RowBackground="#065a60"
             ColumnWidth="*"
-            HorizontalGridLinesBrush="Transparent"
-            VerticalGridLinesBrush="Transparent"
+            HorizontalGridLinesBrush="Black"
+            VerticalGridLinesBrush="Black"
             HorizontalScrollBarVisibility="Hidden"
             VerticalScrollBarVisibility="Hidden"
             RowHeaderWidth="0">
@@ -63,7 +54,9 @@
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
                         <Trigger Property="DataGridCell.IsSelected" Value="True">
-                            <Setter Property="Background" Value="#CCDAFF" />
+                            <Setter Property="Background" Value="GhostWhite" />
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="FontSize" Value="15"/>
                         </Trigger>
                     </Style.Triggers>
                 </Style>
@@ -117,24 +110,24 @@
                 <StackPanel Grid.Row="1">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Startup Price: "/>
-                        <TextBox Width="155" Foreground="Black" FontSize="25" Text="{Binding AuctionStartupPrice,
+                        <TextBox Width="155" Background="#545d6a" Foreground="NavajoWhite" FontSize="25" Text="{Binding AuctionStartupPrice,
                             ValidatesOnDataErrors=True,
                             UpdateSourceTrigger=PropertyChanged}"
-                                 ToolTip="{Binding ErrorCollection[AuctionStartupPrice]}"/>
+                                 ToolTip="{Binding ErrorCollection[AuctionStartupPrice]}" Height="31"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Redemption Price: "/>
-                        <TextBox Width="100" Foreground="Black" FontSize="25" Text="{Binding AuctionRedemptionPrice,
+                        <TextBox Width="100"  Background="#545d6a" Foreground="NavajoWhite" FontSize="25" Text="{Binding AuctionRedemptionPrice,
                             ValidatesOnDataErrors=True,
                             UpdateSourceTrigger=PropertyChanged}"
-                                 ToolTip="{Binding ErrorCollection[AuctionRedemptionPrice]}"/>
+                                 ToolTip="{Binding ErrorCollection[AuctionRedemptionPrice]}" Height="30"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="EndTime: "/>
-                        <TextBox Width="200" Foreground="Black" FontSize="25" Text="{Binding AuctionEndTime,
+                        <TextBox Width="199"  Background="#545d6a" Foreground="NavajoWhite" FontSize="25" Text="{Binding AuctionEndTime,
                             ValidatesOnDataErrors=True,
                             UpdateSourceTrigger=PropertyChanged}"
-                                 ToolTip="{Binding ErrorCollection[AuctionEndTime]}"/>
+                                 ToolTip="{Binding ErrorCollection[AuctionEndTime]}" Height="32"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
@@ -143,6 +136,7 @@
                             Height="50" 
                             Content="Create auction" 
                             Margin="0,160,0,0"
+                            Style="{StaticResource DefaultButtonDesign}"
                             Foreground="Black"
                             Command="{Binding CreateNewAuctionCommand}"
                             IsEnabled="{Binding ButtonCreateIsEnable}"/>

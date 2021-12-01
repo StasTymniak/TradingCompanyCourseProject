@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\App.xaml
-6-1225236418
+7-782084741
 
 241066498783
 2241759820000
-Views\AuctionView.xaml;Views\CategoryView.xaml;Views\LoginView.xaml;Views\ProductView.xaml;Views\UserProductView.xaml;Windows\MainWindow.xaml;
+Styles\ButtonDictionary.xaml;Views\AuctionView.xaml;Views\CategoryView.xaml;Views\LoginView.xaml;Views\ProductView.xaml;Views\UserProductView.xaml;Windows\MainWindow.xaml;
 
 True
 

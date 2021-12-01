@@ -25,7 +25,7 @@ namespace courseProjectWPF.Commands
         public void Execute(object parameter)
         {
             this._productViewModel.Products_Category.Clear();
-            if (parameter.ToString() == "")
+            if (parameter.ToString() == "" || parameter.ToString()==null)
             {
                 foreach (Product product in this._productViewModel.serviceProduct.GetAllProducts())
                 {

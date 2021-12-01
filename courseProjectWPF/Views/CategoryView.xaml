@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="880">
     <Grid>
-        <Grid.ColumnDefinitions>
+        <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="0.8*" />
         </Grid.ColumnDefinitions>
@@ -32,6 +32,10 @@
             <TextBox Text="{Binding CategoryName}" />
             <TextBlock Text="InsertTime" />
             <TextBox Text="{Binding RowInsertTime}" />
-        </StackPanel>
+        </StackPanel>-->
+        <TextBlock Text="Category View"
+                   FontSize="80"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
     </Grid>
 </UserControl>

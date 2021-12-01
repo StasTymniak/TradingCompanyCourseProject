@@ -88,3 +88,4 @@ C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\D
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Views\UserProductView.baml
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Views\AuctionView.g.cs
 C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Views\AuctionView.baml
+C:\Users\tymniak\source\repos\TradingCompanyCourseProject\courseProjectWPF\obj\Debug\net5.0-windows\Styles\ButtonDictionary.baml
