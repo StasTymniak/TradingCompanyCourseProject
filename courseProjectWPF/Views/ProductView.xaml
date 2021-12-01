@@ -117,25 +117,35 @@
                 <StackPanel Grid.Row="1">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Startup Price: "/>
-                        <TextBox Width="155" Foreground="Black" FontSize="25" Text="{Binding AuctionStartupPrice}"/>
+                        <TextBox Width="155" Foreground="Black" FontSize="25" Text="{Binding AuctionStartupPrice,
+                            ValidatesOnDataErrors=True,
+                            UpdateSourceTrigger=PropertyChanged}"
+                                 ToolTip="{Binding ErrorCollection[AuctionStartupPrice]}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Redemption Price: "/>
-                        <TextBox Width="100" Foreground="Black" FontSize="25" Text="{Binding AuctionRedemptionPrice}"/>
+                        <TextBox Width="100" Foreground="Black" FontSize="25" Text="{Binding AuctionRedemptionPrice,
+                            ValidatesOnDataErrors=True,
+                            UpdateSourceTrigger=PropertyChanged}"
+                                 ToolTip="{Binding ErrorCollection[AuctionRedemptionPrice]}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="EndTime: "/>
-                        <TextBox Width="200" Foreground="Black" FontSize="25" Text="{Binding AuctionEndTime}"/>
+                        <TextBox Width="200" Foreground="Black" FontSize="25" Text="{Binding AuctionEndTime,
+                            ValidatesOnDataErrors=True,
+                            UpdateSourceTrigger=PropertyChanged}"
+                                 ToolTip="{Binding ErrorCollection[AuctionEndTime]}"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
             
                     <Button Grid.Column="1" 
-                    Height="50" 
-                    Content="Create auction" 
-                    Margin="0,160,0,0"
-                    Foreground="Black"
-                    Command="{Binding CreateNewAuctionCommand}"/>
+                            Height="50" 
+                            Content="Create auction" 
+                            Margin="0,160,0,0"
+                            Foreground="Black"
+                            Command="{Binding CreateNewAuctionCommand}"
+                            IsEnabled="{Binding ButtonCreateIsEnable}"/>
         </Grid>
         
     </Grid>

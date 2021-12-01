@@ -38,7 +38,7 @@ namespace courseProjectWPF.Commands
                 }
                 else if (parameter.ToString() == "Auctions")
                 {
-                    this._mainViewModel.SelectedViewModel = new AuctionViewModel(this._mainViewModel.ServiceProduct, this._mainViewModel.ServiceCategory,this._mainViewModel.ServiceAuction);
+                    this._mainViewModel.SelectedViewModel = new AuctionViewModel(this._mainViewModel.ServiceProduct, this._mainViewModel.ServiceCategory,this._mainViewModel.ServiceAuction, this._mainViewModel);
                 }
             }
             else

@@ -13,22 +13,29 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Label Content="Login" Foreground="White" Height="60"/>
-            <TextBox Text="{Binding UserName}"
+            <TextBox Text="{Binding UserName,
+                ValidatesOnDataErrors=True,
+                UpdateSourceTrigger=PropertyChanged}"
+                     ToolTip="{Binding ErrorCollection[UserName]}"
                      Background="#545d6a"
                      Foreground="White"
                      FontSize="15"
                      Width="70" 
                      Height="20"/>
             <Label Content="Password" Foreground="White" Height="60"/>
-            <TextBox Text="{Binding UserPassword}"
-                         Background="#545d6a"
-                         Foreground="White"
-                         Width="70" 
-                         Height="20"
-                         FontSize="15"/>
+            <TextBox Text="{Binding UserPassword,
+                ValidatesOnDataErrors=True,
+                UpdateSourceTrigger=PropertyChanged}"
+                     ToolTip="{Binding ErrorCollection[UserPassword]}"
+                     Background="#545d6a"
+                     Foreground="White"
+                     Width="70" 
+                     Height="20"
+                     FontSize="15"/>
         </StackPanel>
         <Button Grid.Row="1" Width="60" Margin="179,0,41,0" Content="{Binding LoginViewButtonContent}"
-                Command="{Binding LoginButtonCommand}">
+                Command="{Binding LoginButtonCommand}"
+                IsEnabled="{Binding ButtonLogInIsEnable}">
         </Button>
     </Grid>
 </UserControl>

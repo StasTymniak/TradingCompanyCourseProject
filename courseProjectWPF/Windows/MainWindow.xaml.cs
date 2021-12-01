@@ -53,7 +53,6 @@ namespace courseProjectWPF.Windows
             {
                 this.Close();
             }
-
         }
     }
 }

@@ -17,7 +17,7 @@
             Height="400"
             VerticalAlignment="Top"
             ItemsSource="{Binding Auctions}"
-            SelectedItem="{Binding SelectedItem}"      
+            SelectedItem="{Binding SelectedAuction}"   
             AutoGenerateColumns="False" 
             CanUserResizeColumns="False"
             FontSize="10"
@@ -70,5 +70,8 @@
                 <DataGridTextColumn Header="Product ID" Binding="{Binding Path=ProductId}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Grid.Row="1"
+                Content="{Binding AuctionButtonContent}"
+                Command="{Binding AuctionButtonCommand}"/>
     </Grid>
 </UserControl>
