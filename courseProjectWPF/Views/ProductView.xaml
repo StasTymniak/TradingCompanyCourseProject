@@ -84,11 +84,11 @@
             </DataGrid.Columns>
         </DataGrid>
         <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column ="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row ="0" >
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -100,46 +100,53 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Product name: "/>
-                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="{Binding Path=Item1.ProductName, Mode=TwoWay}"/>
+                        <TextBlock TextWrapping="WrapWithOverflow"  Foreground="AntiqueWhite" FontSize="25" Text="{Binding Path=Item1.ProductName, Mode=TwoWay}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Category: "/>
                         <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="{Binding Path=Item2}"/>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="1">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Startup Price: "/>
-                        <TextBox Width="155" Background="#545d6a" Foreground="NavajoWhite" FontSize="25" Text="{Binding AuctionStartupPrice,
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Startup Price: "/>
+                            <TextBox Width="155" Background="#545d6a" Foreground="NavajoWhite" FontSize="25" Text="{Binding AuctionStartupPrice,
                             ValidatesOnDataErrors=True,
                             UpdateSourceTrigger=PropertyChanged}"
                                  ToolTip="{Binding ErrorCollection[AuctionStartupPrice]}" Height="31"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Redemption Price: "/>
-                        <TextBox Width="100"  Background="#545d6a" Foreground="NavajoWhite" FontSize="25" Text="{Binding AuctionRedemptionPrice,
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="Redemption Price: "/>
+                            <TextBox Width="100"  Background="#545d6a" Foreground="NavajoWhite" FontSize="25" Text="{Binding AuctionRedemptionPrice,
                             ValidatesOnDataErrors=True,
                             UpdateSourceTrigger=PropertyChanged}"
                                  ToolTip="{Binding ErrorCollection[AuctionRedemptionPrice]}" Height="30"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="EndTime: "/>
-                        <TextBox Width="199"  Background="#545d6a" Foreground="NavajoWhite" FontSize="25" Text="{Binding AuctionEndTime,
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="AntiqueWhite" FontSize="25" Text="EndTime: "/>
+                            <TextBox Width="199"  Background="#545d6a" Foreground="NavajoWhite" FontSize="25" Text="{Binding AuctionEndTime,
                             ValidatesOnDataErrors=True,
                             UpdateSourceTrigger=PropertyChanged}"
                                  ToolTip="{Binding ErrorCollection[AuctionEndTime]}" Height="32"/>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-            </Grid>
-            
                     <Button Grid.Column="1" 
                             Height="50" 
                             Content="Create auction" 
-                            Margin="0,160,0,0"
+                            Margin="0,50,0,0"
                             Style="{StaticResource DefaultButtonDesign}"
                             Foreground="Black"
                             Command="{Binding CreateNewAuctionCommand}"
                             IsEnabled="{Binding ButtonCreateIsEnable}"/>
+                </Grid>
+                
+            </Grid>
+            
         </Grid>
         
     </Grid>
