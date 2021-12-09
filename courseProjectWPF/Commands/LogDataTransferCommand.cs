@@ -30,7 +30,7 @@ namespace courseProjectWPF.Commands
             logData = this._logInViewModel.ServiceAuth.LogIn(this._logInViewModel.UserName, this._logInViewModel.UserPassword);
             if (logData[0] == 1)
             {
-                this._logInViewModel.IsLoggedIn = true;
+                this._logInViewModel.IsLoggedIn = false;
                 this._logInViewModel.LoginViewButtonContent = "Log out";
                 if (logData[1] == 1)
                 {

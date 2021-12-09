@@ -25,7 +25,6 @@ namespace courseProjectWPF.Windows
             ConfigureUnity();
             InitializeComponent();
             DataContext = Container.Resolve<MainViewModel>();
-
         }
         static private void ConfigureUnity()
         {
@@ -46,8 +45,7 @@ namespace courseProjectWPF.Windows
             // Begin dragging the window
             this.DragMove();
         }
-        private void CloseCommandBinding_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
-        
+        private void CloseCommandBinding_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)     
         {
             if (MessageBox.Show("Close?", "Close", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {

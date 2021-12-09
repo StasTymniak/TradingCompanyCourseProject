@@ -14,14 +14,26 @@ namespace courseProjectWPF.ViewModels
 {
     internal class LoginViewModel : BaseViewModel, INotifyPropertyChanged, IDataErrorInfo
     {
+        #region Private Properties
         private string _userName;
         private string _userPassword;
         private string _loginViewButtonContent = "Log in";
         private MainViewModel _mainViewModel;
         private IServiceAuth _serviceAuth;
         private ICommand _loginButtonCommand;
+        private bool _isLoggedIn = true;
 
-        public bool IsLoggedIn { get; set; }
+        #endregion
+
+        public bool IsLoggedIn
+        {
+            get => this._isLoggedIn;
+            set
+            {
+                this._isLoggedIn = value;
+                OnPropertyChanged("IsLoggedIn");
+            }
+        }
         public ICommand LogDataTransferCommand { get; set; }    
         public LoginViewModel(MainViewModel mainViewModel, IServiceAuth serviceAuth)
         {

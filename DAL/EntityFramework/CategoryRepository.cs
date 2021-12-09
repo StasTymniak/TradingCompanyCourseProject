@@ -10,8 +10,8 @@ namespace DAL.EntityFramework
 {
     public class CategoryRepository : IRepository<Category>
     {
-        //public string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
-        string conn = ConfigurationManager.AppSettings["connString"].ToString();
+        public string conn = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        //string conn = ConfigurationManager.AppSettings["connString"].ToString();
 
         public Category Create(Category obj)
         {

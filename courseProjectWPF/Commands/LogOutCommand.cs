@@ -30,7 +30,7 @@ namespace courseProjectWPF.Commands
             this._logInViewModel.UserPassword = "";
             this._logInViewModel.UserName = "";
             this._logInViewModel.MainViewModel.UserRole = "";
-            this._logInViewModel.IsLoggedIn = false;
+            this._logInViewModel.IsLoggedIn = true;
             this._logInViewModel.LoginViewButtonContent = "Log in";
             this._logInViewModel.MainViewModel.SelectedViewModel = null;
             this._logInViewModel.LoginButtonCommand = new LogDataTransferCommand(this._logInViewModel);

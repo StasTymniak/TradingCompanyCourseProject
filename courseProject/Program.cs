@@ -11,17 +11,17 @@ namespace courseProject
     {
         static void Main(string[] args)
         {
-            /*Menu.ShowMenu();*/
-            IUserRepository userRepository = new UserRepository();
+            Menu.ShowMenu();
+            /*IUserRepository userRepository = new UserRepository();
             IServiceAuth serviceAuth = new ServiceAuth(userRepository);
-            /*UserDTO userLogIn = new UserDTO();
+            *//*UserDTO userLogIn = new UserDTO();
             Console.Write("Login: ");
             string enteredEmail = Console.ReadLine();
             Console.Write("Password: ");
             string enteredPass = Console.ReadLine();
             userLogIn = userRepository.LoginData(enteredEmail);
-            string userpassDB = userRepository.Get(userLogIn.Id).Password;*/
-            serviceAuth.RegUser();
+            string userpassDB = userRepository.Get(userLogIn.Id).Password;*//*
+            serviceAuth.RegUser();*/
 
         }
     }

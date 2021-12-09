@@ -35,7 +35,8 @@
             VerticalGridLinesBrush="Black"
             HorizontalScrollBarVisibility="Hidden"
             VerticalScrollBarVisibility="Hidden"
-            RowHeaderWidth="0">
+            RowHeaderWidth="0"
+            IsReadOnly="True">
 
             <DataGrid.Resources>
                 <Style TargetType="ScrollBar">

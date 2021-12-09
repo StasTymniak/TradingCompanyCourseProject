@@ -28,7 +28,8 @@
                      Foreground="White"
                      FontSize="15"
                      Width="70" 
-                     Height="20"/>
+                     Height="20"
+                     IsEnabled="{Binding IsLoggedIn}"/>
             <Label Content="Password" Foreground="White" Height="60"/>
             <TextBox Text="{Binding UserPassword,
                 ValidatesOnDataErrors=True,
@@ -38,7 +39,8 @@
                      Foreground="White"
                      Width="70" 
                      Height="20"
-                     FontSize="15"/>
+                     FontSize="15"
+                     IsEnabled="{Binding IsLoggedIn}"/>
         </StackPanel>
         <Button Grid.Row="1" Width="60" Margin="179,0,41,0" Content="{Binding LoginViewButtonContent}"
                 Command="{Binding LoginButtonCommand}"

@@ -23,7 +23,7 @@ namespace courseProjectWPF.Commands
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            return this._productViewModel.ButtonCreateIsEnable;
         }
 
         public void Execute(object parameter)
